@@ -184,11 +184,11 @@ const InputContainer = styled.div`
 
 const Input = styled.input`
   padding: 1rem 3rem;
-  height: 3rem;
+  height: 4rem;
   border: 2px solid var(--text-color);
   border-top: none;
   border-bottom: none;
-  font-size: 0.8rem;
+  font-size: 1rem;
   background: transparent;
   outline: none;
   box-shadow: 7px 7px 0px 0px var(--text-color);
@@ -208,12 +208,17 @@ const Label = styled.label`
   position: absolute;
   top: 10px;
   left: 20px;
-  color: var(--text-color);
   transition: all 0.5s;
   z-index: -1;
   font-size: 0.8rem;
   font-family: var(--font);
   color: var(--text-grey);
+
+  ${Input}:focus ~ & {
+    top: -10px;
+    left: 10px;
+    color: var(--text-grey);
+  }
 `;
 
 const TopLine = styled.div`
@@ -225,6 +230,11 @@ const TopLine = styled.div`
   top: 0;
   width: 100%;
   transition: all 0.5s;
+
+  ${Input}:focus ~ & {
+    width: 35%;
+    height: 1.5px;
+  }
 `;
 
 const Underline = styled.div`
@@ -235,6 +245,11 @@ const Underline = styled.div`
   right: 0;
   bottom: 0;
   transition: all 0.5s;
+
+  ${Input}:focus ~ & {
+    height: 1.5px;
+    width: 100%;
+  }
 `;
 
 const Button = styled.button`
@@ -334,7 +349,6 @@ function FirstSection() {
   return (
     <>
       {" "}
-      <Header />
       <FirstSectionContainer
         variants={fadevariants}
         initial="hidden"
@@ -354,7 +368,7 @@ function FirstSection() {
                 animate="visible"
                 exit="exit"
               >
-                We Deliver Your Dreams In Any Way
+                We Deliver Your Dreams In Any Way.
               </Heading1>
               <Paragraph
                 variants={upvariants}

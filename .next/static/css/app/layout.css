@@ -41,9 +41,9 @@
 :root {
   --text-gradient: -webkit-linear-gradient(
     70deg,
-    #5d26c1 0%,
-    #a17fe0 40%,
-    #59c173 60%
+    #00ffa2 0%,
+    #00df8d 50%,
+    #00ffa2 60%
   );
 
   --text-gradient-secondary: -webkit-linear-gradient(
@@ -63,11 +63,11 @@
 
   --primary-color-bg: #21a872;
 
-  --secondary-color: #5055f9;
+  --secondary-color: #5065f9;
 
   --secondary-color-bg: #cdb3ff;
 
-  --heading-font: "manrope-extra";
+  --extra: "manrope-extra";
 
   --bold: "manrope-bold";
 

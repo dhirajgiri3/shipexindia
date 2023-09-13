@@ -5,7 +5,9 @@ import Link from "next/link";
 import styled from "styled-components";
 import logo from "@/Assets/Images/Logos/Shipex-transparent-logo.png";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import ExpandLessIcon from "@mui/icons-material/ExpandLess";
 
 // Styled Components
 const Navbar = styled.nav`
@@ -26,6 +28,12 @@ const Navbar = styled.nav`
 
   @media screen and (max-width: 1000px) {
     height: 6vh;
+  }
+
+  .pc {
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
   }
 
   @media screen and (max-width: 768px) {
@@ -65,15 +73,63 @@ const LogoImage = styled(Image)`
   }
 `;
 
-const MenuLink = styled(Link)`
+const MenuLink = styled.div`
+  position: relative; /* Add relative positioning */
   font-size: 0.9rem;
   color: var(--text-grey);
   text-decoration: none;
   transition: color 0.2s ease-in-out;
   font-family: var(--font);
+  cursor: pointer;
 
   &:hover {
     color: var(--secondary-color);
+  }
+
+  .menutitle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.1rem;
+    transition: color 0.3s ease-in-out;
+  }
+
+  .dropdown {
+    position: absolute;
+    top: 200%; /* Adjust the positioning as needed */
+    left: -100%;
+    background-color: var(--primary-color);
+    border-radius: 30px;
+    padding: 2rem;
+    z-index: 10000;
+    min-width: 20rem;
+    opacity: 0;
+    transform-origin: top center;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+
+    @media screen and (max-width: 768px) {
+      top: 100%;
+      left: 0;
+      min-width: 15rem;
+    }
+
+    & a {
+      display: block;
+      padding: 5px 10px;
+      color: var(--white-bg);
+      text-decoration: none;
+      white-space: nowrap;
+      transition: color 0.3s ease-in-out;
+
+      &:hover {
+        color: #fff;
+      }
+    }
   }
 `;
 
@@ -115,6 +171,7 @@ const CtaButtonWrapper = styled.button`
   border: 2px solid var(--text-color);
   background: transparent;
   box-shadow: 5px 5px var(--text-color);
+  margin-top: -5px;
   cursor: pointer;
 
   &:active {
@@ -219,48 +276,6 @@ const SidebarContent = styled.div`
       @media screen and (max-width: 768px) {
         gap: 2rem;
       }
-
-      .li {
-        margin-right: 1rem;
-      }
-
-      .a {
-        font-size: 1.2rem;
-        color: var(--text-grey);
-        text-decoration: none;
-        transition: color 0.2s ease-in-out;
-        font-family: var(--mid-font);
-
-        &:hover {
-          color: var(--secondary-color);
-        }
-      }
-
-      .ctaButton {
-        font-family: var(--font);
-        font-size: 0.8rem;
-        color: var(--text-color);
-        padding: 10px 20px;
-        border-radius: 100px;
-        border: 2px solid var(--text-color);
-        background: transparent;
-        box-shadow: 5px 5px var(--text-color);
-        cursor: pointer;
-
-        &:hover {
-          background: var(--secondary-color);
-        }
-      }
-    }
-  }
-
-  .logo {
-    .a {
-      .logoimg {
-        height: 5rem;
-        width: 100%;
-        object-fit: cover;
-      }
     }
   }
 `;
@@ -298,16 +313,35 @@ const variants = {
 
 export default function Header() {
   const [showSidebar, setShowSidebar] = useState(false);
+  const [showDropdown, setShowDropdown] = useState(false);
+
+  const dropdownVariants = {
+    hidden: {
+      opacity: 0,
+      scaleY: 0,
+    },
+    visible: {
+      opacity: 1,
+      scaleY: 1,
+      transition: {
+        duration: 0.3,
+        ease: "easeInOut",
+      },
+    },
+  };
+
+  const toggleDropdown = () => {
+    setShowDropdown(!showDropdown);
+  };
 
   const sidebarRef = useRef(null);
-
   const bgRef = useRef(null);
 
   useEffect(() => {
     const sidebar = sidebarRef.current;
     const bg = bgRef.current;
     if (showSidebar) {
-      sidebar.style = "translateX(0)";
+      sidebar.style.transform = "translateX(0)";
       bg.style.background = "#00000099";
       bg.style.display = "block";
     } else {
@@ -320,6 +354,22 @@ export default function Header() {
   const sidebarToggle = () => {
     setShowSidebar(!showSidebar);
   };
+
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (showDropdown) {
+        if (!event.target.closest(".dropdown")) {
+          setShowDropdown(false);
+        }
+      }
+    }
+
+    document.addEventListener("click", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, [showDropdown]);
 
   return (
     <motion.div
@@ -340,7 +390,34 @@ export default function Header() {
               <MenuLink href="/">Home</MenuLink>
             </MenuItem>
             <MenuItem>
-              <MenuLink href="/resources">Resources</MenuLink>
+              <MenuLink onClick={toggleDropdown}>
+                <motion.span
+                  variants={dropdownVariants}
+                  initial="hidden"
+                  whileInView="visible"
+                  exit="hidden"
+                  className="menutitle"
+                >
+                  Resources
+                  {showDropdown ? <ExpandLessIcon /> : <ExpandMoreIcon />}
+                </motion.span>
+                <AnimatePresence>
+                  {showDropdown && (
+                    <motion.div
+                      className="dropdown"
+                      variants={dropdownVariants}
+                      initial="hidden"
+                      whileInView="visible"
+                      exit="hidden"
+                    >
+                      <Link href="/resource1">Resource 1</Link>
+                      <Link href="/resource2">Resource 2</Link>
+                      <Link href="/resource2">Resource 2</Link>
+                      <Link href="/resource2">Resource 2</Link>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </MenuLink>
             </MenuItem>
             <MenuItem>
               <MenuLink href="/services">Service</MenuLink>
@@ -352,13 +429,15 @@ export default function Header() {
               <MenuLink href="/contact">Contact</MenuLink>
             </MenuItem>
             <MenuItem>
-              <LoginLink href="/login">Login/signUp</LoginLink>
+              <CtaButton href="/">
+                <CtaButtonWrapper>Book Shipment</CtaButtonWrapper>
+              </CtaButton>
             </MenuItem>
           </MenuList>
         </Menu>
-        <CtaButton href="/">
-          <CtaButtonWrapper>Book Shipment</CtaButtonWrapper>
-        </CtaButton>
+        <LoginLink className="pc" href="/login">
+          Login/signUp
+        </LoginLink>
         <Bar onClick={sidebarToggle}>
           <H1>Menu</H1>
         </Bar>
@@ -376,39 +455,56 @@ export default function Header() {
           </div>
           <div className="menu">
             <ul className="ul">
-              <li className="li">
-                <Link className="a" href="/">
-                  Home
-                </Link>
-              </li>
-              <li className="li">
-                <Link className="a" href="/resources">
-                  Resources
-                </Link>
-              </li>
-              <li className="li">
-                <Link className="a" href="/services">
-                  Service
-                </Link>
-              </li>
-              <li className="li">
-                <Link className="a" href="/about">
-                  About Us
-                </Link>
-              </li>
-              <li className="li">
-                <Link className="a" href="/contact">
-                  Contact
-                </Link>
-              </li>
-              <li className="li">
-                <LoginLink href="/login">Login/signUp</LoginLink>
-              </li>
+              <MenuItem>
+                <MenuLink href="/">Home</MenuLink>
+              </MenuItem>
+              <MenuItem>
+                <MenuLink onClick={toggleDropdown}>
+                  <motion.span
+                    variants={dropdownVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    exit="hidden"
+                    className="menutitle"
+                  >
+                    Resources
+                    {showDropdown ? <ExpandLessIcon /> : <ExpandMoreIcon />}
+                  </motion.span>
+                  <AnimatePresence>
+                    {showDropdown && (
+                      <motion.div
+                        className="dropdown"
+                        variants={dropdownVariants}
+                        initial="hidden"
+                        whileInView="visible"
+                        exit="hidden"
+                      >
+                        <Link href="/resource1">Resource 1</Link>
+                        <Link href="/resource2">Resource 2</Link>
+                        <Link href="/resource2">Resource 2</Link>
+                        <Link href="/resource2">Resource 2</Link>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </MenuLink>
+              </MenuItem>
+              <MenuItem>
+                <MenuLink href="/services">Service</MenuLink>
+              </MenuItem>
+              <MenuItem>
+                <MenuLink href="/about">About Us</MenuLink>
+              </MenuItem>
+              <MenuItem>
+                <MenuLink href="/contact">Contact</MenuLink>
+              </MenuItem>
+              <MenuItem>
+                <div className="ctaButton">
+                  <CtaButtonWrapper>Book Shipment</CtaButtonWrapper>
+                </div>
+              </MenuItem>
             </ul>
           </div>
-          <div className="ctaButton">
-            <CtaButtonWrapper>Book Shipment</CtaButtonWrapper>
-          </div>
+          <LoginLink href="/login">Login/signUp</LoginLink>
         </SidebarContent>
       </SidebarContainer>
     </motion.div>
