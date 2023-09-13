@@ -4,6 +4,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import Avatar from "@/Components/Avatar/Avatar";
 import styled from "styled-components";
+import Header from "@/Components/Common/Header/Header";
 
 // Define styled-components for your elements
 const FirstSectionContainer = styled(motion.main)`
@@ -23,17 +24,6 @@ const BackgroundImage = styled.img`
   top: 0;
   left: 0;
   object-fit: cover;
-
-  /* @media screen and (max-width: 1000px) {
-    height: 100vh;
-  }
-
-  @media screen and (max-width: 768px) {
-    height: 135vh;
-  }
-  @media screen and (max-width: 376px) {
-    height: 155vh;
-  } */
 `;
 
 const ContentContainer = styled.div`
@@ -342,78 +332,81 @@ const variants = {
 
 function FirstSection() {
   return (
-    <FirstSectionContainer
-      variants={fadevariants}
-      initial="hidden"
-      animate="visible"
-      exit="exit"
-    >
-      <BackgroundImage
-        alt="shipexindia first section background"
-        src="https://res.cloudinary.com/divbobkmd/image/upload/v1694586851/first-bg_rlvp5l.png"
-      />
-      <ContentContainer>
-        <TopContainer>
-          <LeftContainer>
-            <Heading1
+    <>
+      {" "}
+      <Header />
+      <FirstSectionContainer
+        variants={fadevariants}
+        initial="hidden"
+        animate="visible"
+        exit="exit"
+      >
+        <BackgroundImage
+          alt="shipexindia first section background"
+          src="https://res.cloudinary.com/divbobkmd/image/upload/v1694586851/first-bg_rlvp5l.png"
+        />
+        <ContentContainer>
+          <TopContainer>
+            <LeftContainer>
+              <Heading1
+                variants={upvariants}
+                initial="hidden"
+                animate="visible"
+                exit="exit"
+              >
+                We Deliver Your Dreams In Any Way
+              </Heading1>
+              <Paragraph
+                variants={upvariants}
+                initial="hidden"
+                animate="visible"
+                exit="exit"
+              >
+                From start to finish, we approach every task with confidence,
+                offering you seamless transportation solutions to help you and
+                your business thrive.
+              </Paragraph>
+              <AvatarContainer
+                variants={upvariants}
+                initial="hidden"
+                animate="visible"
+                exit="exit"
+              >
+                <Avatar />
+              </AvatarContainer>
+            </LeftContainer>
+            <RightContainer
               variants={upvariants}
               initial="hidden"
               animate="visible"
               exit="exit"
             >
-              We Deliver Your Dreams In Any Way
-            </Heading1>
-            <Paragraph
-              variants={upvariants}
-              initial="hidden"
-              animate="visible"
-              exit="exit"
-            >
-              From start to finish, we approach every task with confidence,
-              offering you seamless transportation solutions to help you and
-              your business thrive.
-            </Paragraph>
-            <AvatarContainer
-              variants={upvariants}
-              initial="hidden"
-              animate="visible"
-              exit="exit"
-            >
-              <Avatar />
-            </AvatarContainer>
-          </LeftContainer>
-          <RightContainer
-            variants={upvariants}
+              <FirstSectionImage
+                src="https://res.cloudinary.com/divbobkmd/image/upload/v1694586850/first-sec_blx3n2.png"
+                alt="Shipexindia Introduction"
+              />
+            </RightContainer>
+          </TopContainer>
+          <BottomContainer
+            variants={variants}
             initial="hidden"
-            animate="visible"
+            whileInView="visible"
             exit="exit"
           >
-            <FirstSectionImage
-              src="https://res.cloudinary.com/divbobkmd/image/upload/v1694586850/first-sec_blx3n2.png"
-              alt="Shipexindia Introduction"
-        
-            />
-          </RightContainer>
-        </TopContainer>
-        <BottomContainer
-          variants={variants}
-          initial="hidden"
-          whileInView="visible"
-          exit="exit"
-        >
-          <Heading3>Track Your Shipment</Heading3>
-          <InputSection>
-            <InputContainer>
-              <Input name="text" type="text" />
-              <Label htmlFor="input">Enter AWB/OrderId</Label>
-              <TopLine></TopLine>
-              <Underline></Underline>
-            </InputContainer>
-            <Button>Track Now</Button>
-          </InputSection>
-        </BottomContainer>
-      </ContentContainer>
-    </FirstSectionContainer>
+            <Heading3>Track Your Shipment</Heading3>
+            <InputSection>
+              <InputContainer>
+                <Input name="text" type="text" />
+                <Label htmlFor="input">Enter AWB/OrderId</Label>
+                <TopLine></TopLine>
+                <Underline></Underline>
+              </InputContainer>
+              <Button>Track Now</Button>
+            </InputSection>
+          </BottomContainer>
+        </ContentContainer>
+      </FirstSectionContainer>
+    </>
   );
 }
 
