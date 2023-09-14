@@ -8,6 +8,8 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   padding: 5rem 0;
+  height: 100%;
+  width: 100%;
 `;
 
 const Heading = styled.div`

@@ -49,7 +49,7 @@ function Page() {
       if (inView) {
         gsap.to(mainRef.current, {
           backgroundColor: colors[index],
-          duration: 0.3,
+          duration: 0.5,
           ease: "power2.inOut",
         });
       }

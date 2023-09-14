@@ -69,10 +69,8 @@ const CardLayout = styled.div`
     gap: 2rem;
     padding: 0 2rem;
     max-width: 30vw;
-    background: #131313;
-    background: #00c27c;
-    box-shadow: 10px 10px #eee;
-    border: 5px solid #eee;
+    box-shadow: 10px 10px #fff;
+    border: 5px solid #fff;
 
     @media screen and (max-width: 1000px) {
       max-width: 40vw;
@@ -86,10 +84,11 @@ const CardLayout = styled.div`
       position: absolute;
       top: 0;
       right: 0;
-      background: var(--primary-color);
+      background: #fff;
       padding: 0.3rem 1rem;
       border-bottom-left-radius: 10px;
-      color: var(--white-bg);
+      border-top-right-radius: 20px;
+      color: var(--text-color);
       display: none;
 
       @media screen and (max-width: 768px) {
@@ -102,7 +101,7 @@ const CardLayout = styled.div`
       font-family: var(--font-mid);
       font-size: var(--heading-big);
       color: var(--text-grey);
-      color: var(--white-bg);
+      color: #fff;
       letter-spacing: -1px;
       font-weight: 700;
       text-align: center;
@@ -169,7 +168,7 @@ const Heading = styled.div`
     text-align: center;
     font-family: var(--bold);
     font-size: var(--heading);
-    color: var(--white-bg);
+    color: #fff;
     letter-spacing: -1px;
     font-weight: 700;
 
