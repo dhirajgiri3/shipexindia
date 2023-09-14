@@ -173,55 +173,72 @@ function Timeline() {
             <div class="timeline">
               <div class="container left">
                 <div class="content">
-                  <h2>Lorem ipsum dolor sit amet</h2>
+                  <h2>Dropshippers</h2>
                   <p>
-                    Lorem ipsum dolor sit amet elit. Aliquam odio dolor, id
-                    luctus erat sagittis non. Ut blandit semper pretium.
+                    Dropshippers benefit from integrations with multiple
+                    platforms and marketplaces, enabling efficient order
+                    processing and a wide reach. They can also take advantage of
+                    our "ship anytime to anywhere" service.
                   </p>
                 </div>
               </div>
               <div class="container right">
                 <div class="content">
-                  <h2>Lorem ipsum dolor sit amet</h2>
+                  <h2>Enterprises</h2>
                   <p>
-                    Lorem ipsum dolor sit amet elit. Aliquam odio dolor, id
-                    luctus erat sagittis non. Ut blandit semper pretium.
+                    Large enterprises can enjoy advanced features such as
+                    non-robotic NDR management, reduced RTO (Return to Origin)
+                    rates, comprehensive analytics, and reporting. Additionally,
+                    we offer the flexibility to ship to any destination at any
+                    time.
                   </p>
                 </div>
               </div>
               <div class="container left">
                 <div class="content">
-                  <h2>Lorem ipsum dolor sit amet</h2>
+                  <h2>Small & Medium Enterprises (SMEs)</h2>
                   <p>
-                    Lorem ipsum dolor sit amet elit. Aliquam odio dolor, id
-                    luctus erat sagittis non. Ut blandit semper pretium.
+                    Providing SMEs with multiple channel integrations, tracking
+                    notifications for buyers, multiple pickup locations, and
+                    optimized shipping processes. Moreover, we offer the
+                    convenience of shipping to any location, 24/7.
                   </p>
                 </div>
               </div>
               <div class="container right">
                 <div class="content">
-                  <h2>Lorem ipsum dolor sit amet</h2>
+                  <h2>Direct-to-Consumer (D2C)</h2>
                   <p>
-                    Lorem ipsum dolor sit amet elit. Aliquam odio dolor, id
-                    luctus erat sagittis non. Ut blandit semper pretium.
+                    Empowering D2C businesses with seamless channel integration,
+                    enhanced operational efficiency, value-added services, and a
+                    user-friendly platform for order management and fulfillment.
+                    Plus, we ensure that your shipments can go anywhere,
+                    anytime.
                   </p>
                 </div>
               </div>
               <div class="container left">
                 <div class="content">
-                  <h2>Lorem ipsum dolor sit amet</h2>
+                  <h2>Marketplace Sellers</h2>
                   <p>
-                    Lorem ipsum dolor sit amet elit. Aliquam odio dolor, id
-                    luctus erat sagittis non. Ut blandit semper pretium.
+                    Empowering marketplace sellers by offering easy integrations
+                    with multiple marketplaces and carts, multiple locations for
+                    pickup and delivery, and enabling efficient order
+                    processing. Plus, our "ship anytime to anywhere" feature
+                    ensures your products reach customers globally.
                   </p>
                 </div>
               </div>
               <div class="container right">
                 <div class="content">
-                  <h2>Lorem ipsum dolor sit amet</h2>
+                  <h2>Customizable Shipping Options</h2>
                   <p>
-                    Lorem ipsum dolor sit amet elit. Aliquam odio dolor, id
-                    luctus erat sagittis non. Ut blandit semper pretium.
+                    Shipyaari provides customizable shipping options to cater to
+                    your specific business needs. Whether you require express
+                    shipping, eco-friendly packaging, or special handling
+                    instructions, we tailor our services to meet your unique
+                    shipping requirements. Plus, we ensure you can ship your
+                    products anytime to anywhere with ease.
                   </p>
                 </div>
               </div>
