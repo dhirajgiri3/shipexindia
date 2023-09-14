@@ -5,23 +5,21 @@ import FirstSection from "@/Components/Home/FirstSection/FirstSection";
 import CompanyLogo from "@/Components/Home/CompanyLogo/CompanyLogo";
 import styled from "styled-components";
 import Avatar from "@/Components/Avatar/Avatar";
-import { useInView } from "react-intersection-observer";
 import Mockup1 from "@/Components/Home/Mockup1/Mockup1";
 import Cards from "@/Components/Home/Card/Cards";
 import Timeline from "@/Components/Home/Timeline/Timeline";
-import gsap from "gsap";
 import Services from "@/Components/Home/Services/Services";
 
 const HomeContainer = styled.div`
   width: 100%;
   height: 100%;
-  background: #fff;
+`;
 
-  .container {
-    min-height: 30vh;
-    width: 100%;
-    height: 100%;
-  }
+const SectionContainer = styled.div`
+  min-height: 30vh;
+  width: 100%;
+  height: 100%;
+  transition: background-color 1s ease; /* Duration of 1 second for background color change */
 `;
 
 function Page() {
@@ -35,65 +33,53 @@ function Page() {
 
   const mainRef = useRef(null);
 
-  const [containerInView, setContainerInView] = useState([
-    false,
-    false,
-    false,
-    false,
-    false,
-  ]);
+  const [activeSection, setActiveSection] = useState(0);
+
+  const colors = ["#5065f9", "#eee", "#00c27c", "#101010", "#745fde"];
 
   useEffect(() => {
-    const colors = ["#5065f9", "#eee", "#00c27c", "#101010", "#745fde"];
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      const sectionTops = containerRefs.map((ref) => ref.current.offsetTop);
 
-    containerInView.forEach((inView, index) => {
-      if (inView) {
-        gsap.to(mainRef.current, {
-          backgroundColor: colors[index],
-          duration: 0.5,
-          ease: "power2.inOut",
-        });
+      for (let i = 0; i < sectionTops.length; i++) {
+        if (scrollTop >= sectionTops[i] && scrollTop < sectionTops[i + 1]) {
+          setActiveSection(i);
+          break;
+        }
       }
-    });
-  }, [containerInView]);
 
-  const containerIntersectionObservers = containerRefs.map((ref, index) => {
-    const [containerRef, inView] = useInView({ threshold: 0.4 });
-    useEffect(() => {
-      if (inView !== containerInView[index]) {
-        setContainerInView((prevContainerInView) => {
-          const updatedContainerInView = [...prevContainerInView];
-          updatedContainerInView[index] = inView;
-          return updatedContainerInView;
-        });
-      }
-    }, [inView, index]);
+      mainRef.current.style.backgroundColor = colors[activeSection];
+    };
 
-    const containerComponents = [
-      <Mockup1 />,
-      <Timeline />,
-      <Cards />,
-      <Services />,
-      <Avatar />,
-    ];
+    window.addEventListener("scroll", handleScroll);
 
-    return (
-      <div
-        className={`container container${index + 1}`}
-        ref={containerRef}
-        key={index}
-      >
-        {containerComponents[index]}
-      </div>
-    );
-  });
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [activeSection]);
 
   return (
     <HomeContainer>
       <main ref={mainRef}>
         <FirstSection />
         <CompanyLogo />
-        {containerIntersectionObservers}
+        {containerRefs.map((ref, index) => (
+          <SectionContainer
+            ref={ref}
+            key={index}
+            style={{
+              backgroundColor:
+                activeSection === index ? colors[index] : "transparent",
+            }}
+          >
+            {
+              [<Mockup1 />, <Cards />, <Timeline />, <Services />, <Avatar />][
+                index
+              ]
+            }
+          </SectionContainer>
+        ))}
       </main>
     </HomeContainer>
   );

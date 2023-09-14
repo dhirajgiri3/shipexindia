@@ -12,6 +12,10 @@ const TimelineContainer = styled.div`
   margin-top: 0;
   overflow: hidden;
 
+  @media screen and (max-width: 768px) {
+    margin-top: 5rem;
+  }
+
   .bg {
     width: 100%;
     min-height: 200vh;
@@ -39,6 +43,11 @@ const TimelineContainer = styled.div`
         font-family: var(--extra);
         color: var(--white);
         font-size: var(--heading-big);
+        padding: 2rem 0;
+
+        @media screen and (max-width: 768px) {
+          font-size: var(--heading);
+        }
       }
 
       .timeline {

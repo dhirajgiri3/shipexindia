@@ -50,9 +50,9 @@ const HomeServiceContainer = styled.div`
   margin: 0 auto;
   margin-top: 10rem;
 
-    @media screen and (max-width: 768px) {
-        margin-top: 5rem;
-    }
+  @media screen and (max-width: 768px) {
+    margin-top: 5rem;
+  }
 
   .title {
     width: 70%;
