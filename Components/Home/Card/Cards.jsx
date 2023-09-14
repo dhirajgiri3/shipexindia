@@ -6,12 +6,11 @@ const CardContainer = styled.div`
   width: 100%;
   height: 100%;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(1, 1fr);
-  gap: 1rem;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 3rem;
   padding: 0 10rem;
   font-family: var(--font);
-  
 
   @media screen and (max-width: 1000px) {
     padding: 0 5rem;
@@ -44,6 +43,9 @@ const CardLayout = styled.div`
     position: relative;
     transform-style: preserve-3d;
     transition: transform 0.999s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .card:hover .card-inner {
@@ -64,9 +66,13 @@ const CardLayout = styled.div`
     align-items: center;
     border-radius: 30px;
     justify-content: center;
-    font-size: 24px;
     transform: rotateY(0deg);
     font-size: var(--para);
+    flex-direction: column;
+    gap: 2rem;
+    padding: 0 2rem;
+    max-width: 30vw;
+    background: #131313;
 
     .button {
       position: absolute;
@@ -83,29 +89,10 @@ const CardLayout = styled.div`
       }
     }
 
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 30px;
-    }
-  }
-
-  .card-back {
-    background-color: #181818;
-    color: #fff;
-    display: flex;
-    align-items: center;
-    border-radius: 30px;
-    justify-content: center;
-    transform: rotateY(180deg);
-    flex-direction: column;
-    gap: 2rem;
-
     h1 {
-      text-align: center;
+      text-align: left;
       font-family: var(--font-mid);
-      font-size: var(--heading);
+      font-size: var(--heading-small);
       color: var(--white-bg);
       letter-spacing: -1px;
       font-weight: 300;
@@ -119,15 +106,39 @@ const CardLayout = styled.div`
       font-family: var(--font);
       font-size: var(--para);
       color: var(--text-para);
-      text-align: center;
+      text-align: left;
       width: 90%;
       line-height: 1.5;
-      font-weight: 100;
+      font-weight: 300;
       letter-spacing: 0.5px;
 
       @media screen and (max-width: 768px) {
         width: 95%;
       }
+    }
+  }
+
+  .card-back {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    border-radius: 30px;
+    justify-content: center;
+    transform: rotateY(180deg);
+
+    @media screen and (max-width: 1000px) {
+      max-width: 40vw;
+    }
+
+    @media screen and (max-width: 768px) {
+      max-width: 95vw;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 30px;
     }
   }
 `;
@@ -200,28 +211,28 @@ const variants = {
 const cardsData = [
   {
     imageUrl:
-      "https://images.unsplash.com/photo-1501700493788-fa1a4fc9fe62?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1989&q=2000",
+      "https://res.cloudinary.com/divbobkmd/image/upload/v1694690650/domestic_wbmrol.png",
     title: "Road Transport",
     description:
       "When it comes to road transport, we navigate the highways with precision. Your products are handled with the utmost care and attention to detail, ensuring that they arrive at their destination on time and in pristine condition. Our road transport services are the heartbeat of local and national distribution, connecting you to markets near and far.",
   },
   {
     imageUrl:
-      "https://plus.unsplash.com/premium_photo-1661957173884-901e33146e92?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=2000",
+      "https://res.cloudinary.com/divbobkmd/image/upload/v1694690652/international_p9burd.png",
     title: "Air Transport",
     description:
       "Air freight represents swift and efficient shipping. ShipEx India's air cargo solutions ensure your products take flight promptly. We understand the importance of timely deliveries and provide the speed you need, whether it's across the country or around the world.",
   },
   {
     imageUrl:
-      "https://images.unsplash.com/photo-1598193956767-5f45a6307639?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=2000",
+      "https://res.cloudinary.com/divbobkmd/image/upload/v1694690652/b2b_jrvj6h.png",
     title: "Ocean Shipping",
     description:
       "Shipping by sea involves navigating vast waters, and we do so with utmost care. Our ocean shipping services are perfect for international deliveries and large cargo. With ShipEx India, your products are safe as they voyage across the world's oceans.",
   },
   {
     imageUrl:
-      "https://images.unsplash.com/photo-1598193956767-5f45a6307639?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=2000",
+      "https://res.cloudinary.com/divbobkmd/image/upload/v1694690651/hyperlocal_dckjea.png",
     title: "Ocean Shipping",
     description:
       "Shipping by sea involves navigating vast waters, and we do so with utmost care. Our ocean shipping services are perfect for international deliveries and large cargo. With ShipEx India, your products are safe as they voyage across the world's oceans.",
@@ -254,12 +265,12 @@ function Cards() {
               >
                 <div className="card-inner">
                   <div className="card-front">
-                    <img src={card.imageUrl} alt={card.title} />
+                    <h1>{card.title}</h1>
+                    <p>{card.description}</p>
                     <div className="button">view</div>
                   </div>
                   <div className="card-back">
-                    <h1>{card.title}</h1>
-                    <p>{card.description}</p>
+                    <img src={card.imageUrl} alt={card.title} />
                   </div>
                 </div>
               </motion.div>
