@@ -12,7 +12,7 @@ const TimelineContainer = styled.div`
   margin-top: 10rem;
 
   .bg {
-    width: 70%;
+    width: 100%;
     min-height: 200vh;
     height: 100%;
     position: relative;
@@ -27,9 +27,10 @@ const TimelineContainer = styled.div`
       width: 100%;
     }
 
-    .container {
+    .containers {
       height: 100%;
       width: 100%;
+      font-family: var(--font);
 
       .timeline {
         position: relative;
@@ -37,17 +38,6 @@ const TimelineContainer = styled.div`
         max-width: 1140px;
         margin: 0 auto;
         padding: 15px 0;
-      }
-
-      .timeline::after {
-        content: "";
-        position: absolute;
-        width: 2px;
-        background: #006e51;
-        top: 0;
-        bottom: 0;
-        left: 50%;
-        margin-left: -1px;
       }
 
       .container {
@@ -58,11 +48,11 @@ const TimelineContainer = styled.div`
       }
 
       .container.left {
-        left: 0;
+        left: -10%;
       }
 
       .container.right {
-        left: 50%;
+        left: 60%;
       }
 
       .container::after {
@@ -71,15 +61,15 @@ const TimelineContainer = styled.div`
         width: 16px;
         height: 16px;
         top: calc(50% - 8px);
-        right: -8px;
+        right: -10px;
         background: #ffffff;
-        border: 2px solid #006e51;
+        border: 2px solid var(--secondary-color);
         border-radius: 16px;
         z-index: 1;
       }
 
       .container.right::after {
-        left: -8px;
+        left: -10px;
       }
 
       .container::before {
@@ -87,9 +77,9 @@ const TimelineContainer = styled.div`
         position: absolute;
         width: 50px;
         height: 2px;
-        top: calc(50% - 1px);
+        top: calc(50% - 0px);
         right: 8px;
-        background: #006e51;
+        background: var(--secondary-color);
         z-index: 1;
       }
 
@@ -97,54 +87,11 @@ const TimelineContainer = styled.div`
         left: 8px;
       }
 
-      .container .date {
-        position: absolute;
-        display: inline-block;
-        top: calc(50% - 8px);
-        text-align: center;
-        font-size: 14px;
-        font-weight: bold;
-        color: #006e51;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        z-index: 1;
-      }
-
-      .container.left .date {
-        right: -75px;
-      }
-
-      .container.right .date {
-        left: -75px;
-      }
-
-      .container .icon {
-        position: absolute;
-        display: inline-block;
-        width: 40px;
-        height: 40px;
-        padding: 9px 0;
-        top: calc(50% - 20px);
-        background: #f6d155;
-        border: 2px solid #006e51;
-        border-radius: 40px;
-        text-align: center;
-        font-size: 18px;
-        color: #006e51;
-        z-index: 1;
-      }
-
-      .container.left .icon {
-        right: 56px;
-      }
-
-      .container.right .icon {
-        left: 56px;
-      }
-
       .container .content {
         padding: 30px 90px 30px 30px;
-        /* background: #f6d155; */
+        background: #ffffff30;
+        background: #091f4199;
+        backdrop-filter: blur(10px);
         position: relative;
         border-radius: 0 500px 500px 0;
       }
@@ -155,28 +102,40 @@ const TimelineContainer = styled.div`
       }
 
       .container .content h2 {
-        margin: 0 0 10px 0;
-        font-size: 18px;
-        font-weight: normal;
-        color: #006e51;
+        font-size: var(--heading-small);
+        font-weight: 700;
+        color: var(--white-bg);
+        font-family: var(--bold);
       }
 
       .container .content p {
         margin: 0;
-        font-size: 16px;
-        line-height: 22px;
-        color: #000000;
+        font-size: var(--para-mini);
+        font-size: 10px;
+        line-height: 1.5;
+        color: var(--text-para);
+        font-weight: 300;
+        font-family: var(--light-font);
+        letter-spacing: 0.5px;
       }
 
-      @media (max-width: 767.98px) {
+      @media (max-width: 768px) {
         .timeline::after {
-          left: 90px;
+          left: 20px;
+        }
+
+        .container.left {
+          left: 0%;
+        }
+
+        .container.right {
+          left: 50%;
         }
 
         .container {
           width: 100%;
-          padding-left: 120px;
-          padding-right: 30px;
+          padding-left: 30px;
+          padding-right: 15px;
         }
 
         .container.right {
@@ -185,25 +144,14 @@ const TimelineContainer = styled.div`
 
         .container.left::after,
         .container.right::after {
-          left: 82px;
+          left: 10px;
         }
 
         .container.left::before,
         .container.right::before {
-          left: 100px;
-          border-color: transparent #006e51 transparent transparent;
-        }
-
-        .container.left .date,
-        .container.right .date {
-          right: auto;
-          left: 15px;
-        }
-
-        .container.left .icon,
-        .container.right .icon {
-          right: auto;
-          left: 146px;
+          left: 10px;
+          border-color: transparent var(--secondary-color) transparent
+            transparent;
         }
 
         .container.left .content,
@@ -221,11 +169,9 @@ function Timeline() {
     <div>
       <TimelineContainer>
         <div className="bg">
-          <div className="container">
+          <div className="containers">
             <div class="timeline">
               <div class="container left">
-                <div class="date">15 Dec</div>
-                <i class="icon fa fa-home"></i>
                 <div class="content">
                   <h2>Lorem ipsum dolor sit amet</h2>
                   <p>
@@ -235,8 +181,6 @@ function Timeline() {
                 </div>
               </div>
               <div class="container right">
-                <div class="date">22 Oct</div>
-                <i class="icon fa fa-gift"></i>
                 <div class="content">
                   <h2>Lorem ipsum dolor sit amet</h2>
                   <p>
@@ -246,8 +190,6 @@ function Timeline() {
                 </div>
               </div>
               <div class="container left">
-                <div class="date">10 Jul</div>
-                <i class="icon fa fa-user"></i>
                 <div class="content">
                   <h2>Lorem ipsum dolor sit amet</h2>
                   <p>
@@ -257,8 +199,6 @@ function Timeline() {
                 </div>
               </div>
               <div class="container right">
-                <div class="date">18 May</div>
-                <i class="icon fa fa-running"></i>
                 <div class="content">
                   <h2>Lorem ipsum dolor sit amet</h2>
                   <p>
@@ -268,8 +208,6 @@ function Timeline() {
                 </div>
               </div>
               <div class="container left">
-                <div class="date">10 Feb</div>
-                <i class="icon fa fa-cog"></i>
                 <div class="content">
                   <h2>Lorem ipsum dolor sit amet</h2>
                   <p>
@@ -279,8 +217,6 @@ function Timeline() {
                 </div>
               </div>
               <div class="container right">
-                <div class="date">01 Jan</div>
-                <i class="icon fa fa-certificate"></i>
                 <div class="content">
                   <h2>Lorem ipsum dolor sit amet</h2>
                   <p>
