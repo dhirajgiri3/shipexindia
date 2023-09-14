@@ -89,11 +89,11 @@ const TimelineContainer = styled.div`
 
       .container .content {
         padding: 30px 90px 30px 30px;
-        background: #ffffff30;
         background: #091f4199;
         backdrop-filter: blur(10px);
         position: relative;
         border-radius: 0 500px 500px 0;
+        transition: all 0.5s ease-in-out;
       }
 
       .container.right .content {
@@ -164,6 +164,35 @@ const TimelineContainer = styled.div`
   }
 `;
 
+const leftvariants = {
+  hidden: {
+    x: -100,
+  },
+  visible: {
+    x: 0,
+
+    transition: {
+      duration: 1,
+      ease: "easeInOut",
+      delay: 1,
+    },
+  },
+};
+const rightvariants = {
+  hidden: {
+    x: 100,
+  },
+  visible: {
+    x: 0,
+
+    transition: {
+      duration: 1,
+      ease: "easeInOut",
+      delay: 1,
+    },
+  },
+};
+
 function Timeline() {
   return (
     <div>
@@ -171,7 +200,12 @@ function Timeline() {
         <div className="bg">
           <div className="containers">
             <div class="timeline">
-              <div class="container left">
+              <motion.div
+                variants={leftvariants}
+                initial="hidden"
+                whileInView="visible"
+                class="container left"
+              >
                 <div class="content">
                   <h2>Dropshippers</h2>
                   <p>
@@ -181,8 +215,13 @@ function Timeline() {
                     our "ship anytime to anywhere" service.
                   </p>
                 </div>
-              </div>
-              <div class="container right">
+              </motion.div>
+              <motion.div
+                variants={rightvariants}
+                initial="hidden"
+                whileInView="visible"
+                class="container right"
+              >
                 <div class="content">
                   <h2>Enterprises</h2>
                   <p>
@@ -193,8 +232,13 @@ function Timeline() {
                     time.
                   </p>
                 </div>
-              </div>
-              <div class="container left">
+              </motion.div>
+              <motion.div
+                variants={leftvariants}
+                initial="hidden"
+                whileInView="visible"
+                class="container left"
+              >
                 <div class="content">
                   <h2>Small & Medium Enterprises (SMEs)</h2>
                   <p>
@@ -204,8 +248,13 @@ function Timeline() {
                     convenience of shipping to any location, 24/7.
                   </p>
                 </div>
-              </div>
-              <div class="container right">
+              </motion.div>
+              <motion.div
+                variants={rightvariants}
+                initial="hidden"
+                whileInView="visible"
+                class="container right"
+              >
                 <div class="content">
                   <h2>Direct-to-Consumer (D2C)</h2>
                   <p>
@@ -216,8 +265,13 @@ function Timeline() {
                     anytime.
                   </p>
                 </div>
-              </div>
-              <div class="container left">
+              </motion.div>
+              <motion.div
+                variants={leftvariants}
+                initial="hidden"
+                whileInView="visible"
+                class="container left"
+              >
                 <div class="content">
                   <h2>Marketplace Sellers</h2>
                   <p>
@@ -228,20 +282,23 @@ function Timeline() {
                     ensures your products reach customers globally.
                   </p>
                 </div>
-              </div>
-              <div class="container right">
+              </motion.div>
+              <motion.div
+                variants={rightvariants}
+                initial="hidden"
+                whileInView="visible"
+                class="container right"
+              >
                 <div class="content">
-                  <h2>Customizable Shipping Options</h2>
+                  <h2>Social Sellers</h2>
                   <p>
-                    Shipyaari provides customizable shipping options to cater to
-                    your specific business needs. Whether you require express
-                    shipping, eco-friendly packaging, or special handling
-                    instructions, we tailor our services to meet your unique
-                    shipping requirements. Plus, we ensure you can ship your
-                    products anytime to anywhere with ease.
+                    With no monthly fees, a convenient cash on delivery (COD)
+                    facility, reliable tracking information for their customers,
+                    and the ability to ship to any destination at any time,
+                    Shipyaari is an ideal choice for social sellers.
                   </p>
                 </div>
-              </div>
+              </motion.div>
             </div>
           </div>
         </div>

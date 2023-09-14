@@ -6,7 +6,7 @@ const CardContainer = styled.div`
   width: 100%;
   height: 100%;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(1, 1fr);
   gap: 1rem;
   padding: 0 10rem;
@@ -16,10 +16,15 @@ const CardContainer = styled.div`
     padding: 0 5rem;
   }
 
+  @media screen and (max-width: 1000px) {
+    padding: 0 1rem;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
   @media screen and (max-width: 768px) {
     padding: 0 1rem;
     grid-template-columns: repeat(1, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
   }
 `;
 
@@ -205,6 +210,13 @@ const cardsData = [
     title: "Air Transport",
     description:
       "Air freight represents swift and efficient shipping. ShipEx India's air cargo solutions ensure your products take flight promptly. We understand the importance of timely deliveries and provide the speed you need, whether it's across the country or around the world.",
+  },
+  {
+    imageUrl:
+      "https://images.unsplash.com/photo-1598193956767-5f45a6307639?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=2000",
+    title: "Ocean Shipping",
+    description:
+      "Shipping by sea involves navigating vast waters, and we do so with utmost care. Our ocean shipping services are perfect for international deliveries and large cargo. With ShipEx India, your products are safe as they voyage across the world's oceans.",
   },
   {
     imageUrl:
