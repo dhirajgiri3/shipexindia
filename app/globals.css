@@ -39,7 +39,7 @@
   --text-gradient: -webkit-linear-gradient(
     70deg,
     #00ffa2 0%,
-    #00df8d 50%,
+    #00ffa2 50%,
     #00ffa2 60%
   );
 
@@ -52,17 +52,29 @@
 
   --white-bg: #eeeeee;
 
+  --heading-big: 4rem;
+
+  --heading-large: 5rem;
+
+  --heading: 2.5rem;
+
+  --heading-small: 1.5rem;
+
+  --para: 0.9rem;
+
+  --text-para: #ffffff99;
+
   --text-color: #111;
 
   --text-grey: #555;
 
   --primary-color: #01c17c;
 
-  --primary-color-bg: #21a872;
+  --primary-color-bg: #00ffa2;
 
   --secondary-color: #5065f9;
 
-  --secondary-color-bg: #cdb3ff;
+  --secondary-color-bg: #001eff;
 
   --extra: "manrope-extra";
 

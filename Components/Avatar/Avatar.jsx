@@ -24,7 +24,7 @@ const Avatar = () => {
   const staggerVariants = {
     visible: {
       transition: {
-        staggerChildren: 0.07, // Add stagger effect with a 0.07s delay between children
+        staggerChildren: 0.07,
         delay: 1,
       },
     },
@@ -38,11 +38,7 @@ const Avatar = () => {
       animate="visible"
     >
       {imageUrls.map((imageUrl, index) => (
-        <motion.div
-          className={styles.circle}
-          key={index}
-          variants={upvariants}
-        >
+        <motion.div className={styles.circle} key={index} variants={upvariants}>
           <motion.div
             className={styles.image}
             style={{

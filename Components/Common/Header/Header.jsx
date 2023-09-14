@@ -76,14 +76,16 @@ const LogoImage = styled(Image)`
 const MenuLink = styled.div`
   position: relative; /* Add relative positioning */
   font-size: 0.9rem;
-  color: var(--text-grey);
+  color: var(--text-color);
   text-decoration: none;
   transition: color 0.2s ease-in-out;
   font-family: var(--font);
   cursor: pointer;
+  /* mix-blend-mode: difference; */
 
   &:hover {
     color: var(--secondary-color);
+    mix-blend-mode: normal;
   }
 
   .menutitle {

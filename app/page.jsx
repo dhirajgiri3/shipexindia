@@ -8,6 +8,8 @@ import { gsap } from "gsap";
 import Avatar from "@/Components/Avatar/Avatar";
 import { useInView } from "react-intersection-observer";
 import Mockup1 from "@/Components/Home/Mockup1/Mockup1";
+import Cards from "@/Components/Home/Card/Cards";
+import Timeline from "@/Components/Home/Timeline/Timeline";
 
 const HomeContainer = styled.div`
   width: 100%;
@@ -41,7 +43,7 @@ function Page() {
   ]);
 
   useEffect(() => {
-    const colors = ["#5065f9", "#b285ff", "#ffc27c", "#55fed2", "#745fde"];
+    const colors = ["#5065f9", "#101010", "#2e5370", "#55fed2", "#745fde"];
 
     containerInView.forEach((inView, index) => {
       if (inView) {
@@ -68,8 +70,8 @@ function Page() {
 
     const containerComponents = [
       <Mockup1 />,
-      <Avatar />,
-      <Avatar />,
+      <Cards />,
+      <Timeline />,
       <Avatar />,
       <Avatar />,
     ];

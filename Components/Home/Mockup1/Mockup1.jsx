@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import img1 from "@/Assets/Images/mockup1.png";
 import Image from "next/image";
 
@@ -10,19 +10,42 @@ const Container = styled.div`
   padding: 5rem 0;
 `;
 
-const Heading = styled.h1`
-  text-align: center;
-  font-family: var(--bold);
-  font-size: 3rem;
-  color: var(--white-bg);
-  letter-spacing: -1px;
-  font-weight: 700;
+const Heading = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  h1 {
+    text-align: center;
+    font-family: var(--bold);
+    font-size: var(--heading);
+    color: var(--white-bg);
+    letter-spacing: -1px;
+    font-weight: 700;
 
-  span {
-    background: var(--text-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    color: transparent;
+    span {
+      background: var(--text-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: transparent;
+    }
+
+    @media screen and (max-width: 768px) {
+      font-size: var(--heading-small);
+    }
+  }
+
+  p {
+    font-family: var(--font);
+    font-size: var(--para);
+    color: var(--text-para);
+    text-align: center;
+    width: 70%;
+    line-height: 1.5;
+
+    @media screen and (max-width: 768px) {
+      width: 90%;
+    }
   }
 `;
 
@@ -32,25 +55,53 @@ const Images = styled(Image)`
   object-fit: cover;
 `;
 
+const variants = {
+  hidden: {
+    opacity: 0,
+    y: 50,
+  },
+
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 1,
+      ease: "easeInOut",
+      delay: 0.5,
+    },
+  },
+};
+
 const Mockup1 = () => {
   return (
     <Container>
-      <motion.div
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-      >
-        <Heading>
-          Ship your product from <span>anywhere</span> to <span>anywhere</span>{" "}
-        </Heading>
-      </motion.div>
-      <motion.div
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.25 }}
-      >
-        <Images src={img1} alt="Centered Image" />
-      </motion.div>
+      <AnimatePresence>
+        <motion.div>
+          <Heading>
+            <motion.h1
+              variants={variants}
+              initial="hidden"
+              whileInView="visible"
+            >
+              Ship your product from <span>anywhere</span> to{" "}
+              <span>anywhere.</span>
+            </motion.h1>
+
+            <motion.p
+              variants={variants}
+              initial="hidden"
+              whileInView="visible"
+            >
+              We are a global logistics company that is driven by technology and
+              innovation to provide the best experience for our customers around
+              the world.
+            </motion.p>
+          </Heading>
+        </motion.div>
+        <motion.div variants={variants} initial="hidden" whileInView="visible">
+          <Images src={img1} alt="Centered Image" />
+        </motion.div>
+      </AnimatePresence>
     </Container>
   );
 };
