@@ -33,6 +33,14 @@ const TimelineContainer = styled.div`
       width: 100%;
       font-family: var(--font);
 
+      .title {
+        width: 100%;
+        text-align: center;
+        font-family: var(--extra);
+        color: var(--white);
+        font-size: var(--heading-big);
+      }
+
       .timeline {
         position: relative;
         width: 100%;
@@ -198,6 +206,24 @@ function Timeline() {
       <TimelineContainer>
         <div className="bg">
           <div className="containers">
+            <motion.h1
+              initial={{
+                opacity: 0,
+                y: 50,
+              }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+                transition: {
+                  duration: 1,
+                  ease: "easeInOut",
+                  delay: 0.5,
+                },
+              }}
+              className="title"
+            >
+              Why to choose us?
+            </motion.h1>
             <div class="timeline">
               <motion.div
                 variants={leftvariants}
@@ -206,9 +232,9 @@ function Timeline() {
                 class="container left"
               >
                 <div class="content">
-                  <h2>Dropshippers</h2>
+                  <h2>Menufacturers</h2>
                   <p>
-                    Dropshippers benefit from integrations with multiple
+                    Menufacturers benefit from integrations with multiple
                     platforms and marketplaces, enabling efficient order
                     processing and a wide reach. They can also take advantage of
                     our "ship anytime to anywhere" service.

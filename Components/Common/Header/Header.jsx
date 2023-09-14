@@ -98,15 +98,15 @@ const MenuLink = styled.div`
 
   .dropdown {
     position: absolute;
-    top: 200%; /* Adjust the positioning as needed */
-    left: -100%;
+    top: 200%;
+    left: calc(-100% + 2rem);
     background-color: var(--primary-color);
-    border-radius: 30px;
-    padding: 2rem;
+    border-radius: 20px;
+    padding: 1rem;
     z-index: 10000;
-    min-width: 20rem;
     opacity: 0;
     transform-origin: top center;
+    min-width: 15rem;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -129,7 +129,7 @@ const MenuLink = styled.div`
       transition: color 0.3s ease-in-out;
 
       &:hover {
-        color: #fff;
+        color: var(--white);
       }
     }
   }

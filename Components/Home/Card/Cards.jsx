@@ -82,8 +82,8 @@ const CardLayout = styled.div`
 
     .button {
       position: absolute;
-      top: 0;
-      right: 0;
+      top: 5px;
+      right: 10px;
       background: #fff;
       padding: 0.3rem 1rem;
       border-bottom-left-radius: 10px;
@@ -203,7 +203,7 @@ const CardsConatiner = styled.div`
 const variants = {
   hidden: {
     opacity: 0,
-    y: 50,
+    y: 100,
   },
 
   visible: {
@@ -253,13 +253,15 @@ function Cards() {
     <CardsConatiner>
       <Heading>
         <motion.h1 variants={variants} initial="hidden" whileInView="visible">
-          Shipping Your Products with Precision and Enthusiasm
+          Our Comprehensive Logistics Services
         </motion.h1>
         <motion.p variants={variants} initial="hidden" whileInView="visible">
-          At ShipEx India, we do more than just transport your products. We take
-          a journey with them, making sure they reach their destination smoothly
-          and with enthusiasm. We offer transportation by road, air, and water,
-          giving you a reliable shipping experience that covers all your needs.
+          Welcome to ShipEx India, where we deliver more than just
+          transportation services. We provide comprehensive logistics solutions
+          tailored to your needs, ensuring a seamless journey for your products
+          from start to finish. Whether it's road, air, or water transportation,
+          we've got you covered with reliable, precision-driven services that
+          will exceed your expectations.
         </motion.p>
       </Heading>
       <CardContainer>
