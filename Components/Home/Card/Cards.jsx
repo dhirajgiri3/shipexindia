@@ -11,17 +11,21 @@ const CardContainer = styled.div`
   gap: 3rem;
   padding: 0 10rem;
   font-family: var(--font);
+  margin: 5rem 0;
 
   @media screen and (max-width: 1000px) {
     padding: 0 5rem;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
     gap: 2rem;
+    margin: 3rem 0;
   }
   @media screen and (max-width: 768px) {
     padding: 0 1rem;
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: repeat(4, 1fr);
+    gap: 2rem;
+    margin: 1rem 0;
   }
 `;
 
@@ -165,9 +169,11 @@ const Heading = styled.div`
   margin: 0 auto;
   padding: 0 5rem;
   width: 100%;
+  margin-top: 5rem;
 
   @media screen and (max-width: 768px) {
     padding: 0 1rem;
+    margin-top: 0;
   }
 
   h1 {

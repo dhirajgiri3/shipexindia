@@ -10,6 +10,7 @@ import Mockup1 from "@/Components/Home/Mockup1/Mockup1";
 import Cards from "@/Components/Home/Card/Cards";
 import Timeline from "@/Components/Home/Timeline/Timeline";
 import gsap from "gsap";
+import Services from "@/Components/Home/Services/Services";
 
 const HomeContainer = styled.div`
   width: 100%;
@@ -43,7 +44,7 @@ function Page() {
   ]);
 
   useEffect(() => {
-    const colors = ["#5065f9", "#eee", "#00c27c", "#55fed2", "#745fde"];
+    const colors = ["#5065f9", "#eee", "#00c27c", "#101010", "#745fde"];
 
     containerInView.forEach((inView, index) => {
       if (inView) {
@@ -72,7 +73,7 @@ function Page() {
       <Mockup1 />,
       <Timeline />,
       <Cards />,
-      <Avatar />,
+      <Services />,
       <Avatar />,
     ];
 
