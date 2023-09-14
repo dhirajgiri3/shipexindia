@@ -14,12 +14,9 @@ const CardContainer = styled.div`
 
   @media screen and (max-width: 1000px) {
     padding: 0 5rem;
-  }
-
-  @media screen and (max-width: 1000px) {
-    padding: 0 1rem;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
+    gap: 2rem;
   }
   @media screen and (max-width: 768px) {
     padding: 0 1rem;
@@ -73,6 +70,17 @@ const CardLayout = styled.div`
     padding: 0 2rem;
     max-width: 30vw;
     background: #131313;
+    background: #00c27c;
+    box-shadow: 10px 10px #eee;
+    border: 5px solid #eee;
+
+    @media screen and (max-width: 1000px) {
+      max-width: 40vw;
+    }
+
+    @media screen and (max-width: 768px) {
+      max-width: 95vw;
+    }
 
     .button {
       position: absolute;
@@ -92,13 +100,15 @@ const CardLayout = styled.div`
     h1 {
       text-align: left;
       font-family: var(--font-mid);
-      font-size: var(--heading-small);
+      font-size: var(--heading-big);
+      color: var(--text-grey);
       color: var(--white-bg);
       letter-spacing: -1px;
-      font-weight: 300;
+      font-weight: 700;
+      text-align: center;
 
       @media screen and (max-width: 768px) {
-        font-size: var(--heading-small);
+        font-size: var(--heading);
       }
     }
 
@@ -211,29 +221,29 @@ const variants = {
 const cardsData = [
   {
     imageUrl:
-      "https://res.cloudinary.com/divbobkmd/image/upload/v1694690650/domestic_wbmrol.png",
-    title: "Road Transport",
+      "https://res.cloudinary.com/divbobkmd/image/upload/v1694693073/domestic_qleuvu.png",
+    title: "Domestic Shipping",
     description:
       "When it comes to road transport, we navigate the highways with precision. Your products are handled with the utmost care and attention to detail, ensuring that they arrive at their destination on time and in pristine condition. Our road transport services are the heartbeat of local and national distribution, connecting you to markets near and far.",
   },
   {
     imageUrl:
-      "https://res.cloudinary.com/divbobkmd/image/upload/v1694690652/international_p9burd.png",
-    title: "Air Transport",
+      "https://res.cloudinary.com/divbobkmd/image/upload/v1694693074/international_uh8aka.png",
+    title: "International Shipping",
     description:
       "Air freight represents swift and efficient shipping. ShipEx India's air cargo solutions ensure your products take flight promptly. We understand the importance of timely deliveries and provide the speed you need, whether it's across the country or around the world.",
   },
   {
     imageUrl:
-      "https://res.cloudinary.com/divbobkmd/image/upload/v1694690652/b2b_jrvj6h.png",
-    title: "Ocean Shipping",
+      "https://res.cloudinary.com/divbobkmd/image/upload/v1694693074/b2b_xitnen.png",
+    title: "B2B & Bulk Shipping",
     description:
       "Shipping by sea involves navigating vast waters, and we do so with utmost care. Our ocean shipping services are perfect for international deliveries and large cargo. With ShipEx India, your products are safe as they voyage across the world's oceans.",
   },
   {
     imageUrl:
-      "https://res.cloudinary.com/divbobkmd/image/upload/v1694690651/hyperlocal_dckjea.png",
-    title: "Ocean Shipping",
+      "https://res.cloudinary.com/divbobkmd/image/upload/v1694693076/hyperlocal_hqs6ix.png",
+    title: "Hyperlocal Shipping",
     description:
       "Shipping by sea involves navigating vast waters, and we do so with utmost care. Our ocean shipping services are perfect for international deliveries and large cargo. With ShipEx India, your products are safe as they voyage across the world's oceans.",
   },
@@ -266,7 +276,7 @@ function Cards() {
                 <div className="card-inner">
                   <div className="card-front">
                     <h1>{card.title}</h1>
-                    <p>{card.description}</p>
+                    {/* <p>{card.description}</p> */}
                     <div className="button">view</div>
                   </div>
                   <div className="card-back">

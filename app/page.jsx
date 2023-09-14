@@ -43,7 +43,7 @@ function Page() {
   ]);
 
   useEffect(() => {
-    const colors = ["#5065f9", "#101010", "#eee", "#55fed2", "#745fde"];
+    const colors = ["#5065f9", "#00c27c", "#eee", "#55fed2", "#745fde"];
 
     containerInView.forEach((inView, index) => {
       if (inView) {
