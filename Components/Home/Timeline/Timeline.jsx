@@ -10,6 +10,7 @@ const TimelineContainer = styled.div`
   z-index: 0;
   margin: 5rem 0;
   margin-top: 10rem;
+  overflow: hidden;
 
   .bg {
     width: 100%;
