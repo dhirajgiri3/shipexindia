@@ -83,7 +83,7 @@ const CardLayout = styled.div`
     .button {
       position: absolute;
       top: 5px;
-      right: 10px;
+      right: 5px;
       background: #fff;
       padding: 0.3rem 1rem;
       border-bottom-left-radius: 10px;
@@ -278,7 +278,7 @@ function Cards() {
                   <div className="card-front">
                     <h1>{card.title}</h1>
                     {/* <p>{card.description}</p> */}
-                    <div className="button">view</div>
+                    <div className="button">Know more</div>
                   </div>
                   <div className="card-back">
                     <img src={card.imageUrl} alt={card.title} />
