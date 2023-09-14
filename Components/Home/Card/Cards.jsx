@@ -69,8 +69,8 @@ const CardLayout = styled.div`
     gap: 2rem;
     padding: 0 2rem;
     max-width: 30vw;
-    box-shadow: 10px 10px #fff;
-    border: 5px solid #fff;
+    box-shadow: 10px 10px var(--white);
+    border: 5px solid var(--white);
 
     @media screen and (max-width: 1000px) {
       max-width: 40vw;
@@ -84,7 +84,7 @@ const CardLayout = styled.div`
       position: absolute;
       top: 5px;
       right: 5px;
-      background: #fff;
+      background: var(--white);
       padding: 0.3rem 1rem;
       border-bottom-left-radius: 10px;
       border-top-right-radius: 20px;
@@ -94,6 +94,11 @@ const CardLayout = styled.div`
       @media screen and (max-width: 768px) {
         display: block;
       }
+
+      &:hover {
+        cursor: pointer;
+        background: var(--white-bg);
+      }
     }
 
     h1 {
@@ -101,7 +106,7 @@ const CardLayout = styled.div`
       font-family: var(--font-mid);
       font-size: var(--heading-big);
       color: var(--text-grey);
-      color: #fff;
+      color: var(--white);
       letter-spacing: -1px;
       font-weight: 700;
       text-align: center;
@@ -128,7 +133,7 @@ const CardLayout = styled.div`
   }
 
   .card-back {
-    color: #fff;
+    color: var(--white);
     display: flex;
     align-items: center;
     border-radius: 30px;
@@ -159,6 +164,7 @@ const Heading = styled.div`
   gap: 1rem;
   margin: 0 auto;
   padding: 0 5rem;
+  width: 100%;
 
   @media screen and (max-width: 768px) {
     padding: 0 1rem;
@@ -168,7 +174,7 @@ const Heading = styled.div`
     text-align: center;
     font-family: var(--bold);
     font-size: var(--heading);
-    color: #fff;
+    color: var(--white);
     letter-spacing: -1px;
     font-weight: 700;
 
@@ -186,7 +192,7 @@ const Heading = styled.div`
     line-height: 1.5;
 
     @media screen and (max-width: 768px) {
-      width: 90%;
+      width: 100%;
     }
   }
 `;

@@ -9,7 +9,7 @@ const TimelineContainer = styled.div`
   position: relative;
   z-index: 0;
   margin: 5rem 0;
-  margin-top: 10rem;
+  margin-top: 0;
   overflow: hidden;
 
   .bg {

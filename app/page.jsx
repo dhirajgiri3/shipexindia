@@ -43,7 +43,7 @@ function Page() {
   ]);
 
   useEffect(() => {
-    const colors = ["#5065f9", "#00c27c", "#eee", "#55fed2", "#745fde"];
+    const colors = ["#5065f9", "#eee", "#00c27c", "#55fed2", "#745fde"];
 
     containerInView.forEach((inView, index) => {
       if (inView) {
@@ -70,8 +70,8 @@ function Page() {
 
     const containerComponents = [
       <Mockup1 />,
-      <Cards />,
       <Timeline />,
+      <Cards />,
       <Avatar />,
       <Avatar />,
     ];
