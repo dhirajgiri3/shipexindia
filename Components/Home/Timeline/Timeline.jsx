@@ -110,7 +110,7 @@ const TimelineContainer = styled.div`
 
       .container .content p {
         margin: 0;
-        font-size: var(--para-mini);
+        font-size: var(--para);
         font-size: 10px;
         line-height: 1.5;
         color: var(--text-para);
