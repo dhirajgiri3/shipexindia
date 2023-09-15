@@ -1,109 +1,345 @@
+"use client";
+
 import React from "react";
 import logo from "@/Assets/Images/Logos/Shipex-transparent-logo.png";
-import styles from "./Footer.module.css"; // Import the CSS module
 import Image from "next/image";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import Link from "next/link";
+import styled from "styled-components";
+
+// Styled components for the Footer
+const FooterContainer = styled.div`
+  width: 100%;
+  min-height: 50vh;
+  height: 100%;
+  background: var(--text-color);
+  color: var(--white);
+  font-family: var(--font);
+  padding: 3rem 5rem;
+
+  @media screen and (max-width: 1024px) {
+    padding: 3rem 2rem;
+  }
+`;
+
+const Container = styled.div`
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+  gap: 3rem;
+
+  @media screen and (max-width: 1024px) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+
+  @media screen and (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+`;
+
+const First = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  gap: 1rem;
+
+  @media screen and (max-width: 768px) {
+    align-items: flex-start;
+  }
+
+  .logo {
+    height: 100%;
+    width: 100%;
+
+    .logoimg {
+      width: 6rem;
+      height: 6rem;
+      object-fit: cover;
+      padding: 0.7rem;
+      background: var(--white);
+      border-radius: 100px;
+    }
+  }
+
+  .desc {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    font-size: var(--para);
+    font-weight: 400;
+    color: var(--white);
+  }
+
+  .social {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    gap: 1.5rem;
+    margin-top: 1rem;
+
+    @media screen and (max-width: 768px) {
+      align-items: flex-start;
+    }
+
+    .icon {
+      color: var(--white);
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        transform: scale(1.1);
+        cursor: pointer;
+      }
+    }
+  }
+`;
+
+const Second = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  gap: 1rem;
+
+  .heading {
+    width: 100%;
+    text-align: left;
+    font-size: var(--heading-small);
+    font-weight: 600;
+    font-family: var(--bold);
+    color: var(--white);
+  }
+
+  .links {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    gap: 1rem;
+
+    .link {
+      font-size: var(--para);
+      font-weight: 400;
+      font-family: var(--font);
+      color: var(--white);
+      transition: all 0.1s ease-in-out;
+
+      &:hover {
+        color: var(--white-bg);
+        text-decoration: underline;
+      }
+    }
+  }
+`;
+
+const Third = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  gap: 1rem;
+
+  @media screen and (max-width: 768px) {
+    align-items: flex-start;
+  }
+
+  .heading {
+    width: 100%;
+    text-align: left;
+    font-size: var(--heading-small);
+    font-weight: 600;
+    font-family: var(--bold);
+    color: var(--white);
+  }
+
+  .links {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    gap: 1rem;
+
+    .link {
+      font-size: var(--para);
+      font-weight: 400;
+      font-family: var(--font);
+      color: var(--white);
+      transition: all 0.1s ease-in-out;
+
+      &:hover {
+        color: var(--white-bg);
+        text-decoration: underline;
+      }
+    }
+  }
+`;
+
+const Fourth = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  gap: 1rem;
+
+  @media screen and (max-width: 768px) {
+    align-items: flex-start;
+  }
+
+  .heading {
+    width: 100%;
+    text-align: left;
+    font-size: var(--heading-small);
+    font-weight: 600;
+    font-family: var(--bold);
+    color: var(--white);
+  }
+
+  .links {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    gap: 1rem;
+
+    .link {
+      font-size: var(--para);
+      font-weight: 400;
+      font-family: var(--font);
+      color: var(--white);
+      transition: all 0.1s ease-in-out;
+
+      .linkss {
+        color: var(--white);
+        transition: all 0.1s ease-in-out;
+
+        &:hover {
+          color: var(--white-bg);
+        }
+      }
+
+      &:hover {
+        color: var(--white-bg);
+      }
+    }
+  }
+`;
 
 function Footer() {
   return (
     <div>
-      <div className={styles.footerContainer}>
-        <div className={styles.container}>
-          <div className={styles.first}>
-            <div className={styles.logo}>
-              <Image
-                className={styles.logoimg}
-                src={logo}
-                alt="Shipexindia logo"
-              />
+      <FooterContainer>
+        <Container>
+          <First>
+            <div className="logo">
+              <Image className="logoimg" src={logo} alt="Shipexindia logo" />
             </div>
-            <div className={styles.desc}>
+            <div className="desc">
               ShipEx India by ShipLogix Solutions Pvt Ltd is your SME
               cost-cutting shipping partner. Enjoy up to 40% savings with our
               "Compare & Ship" feature and bulk pricing. Trusted carriers like
               Delhivery, Spoton, and Xpressbees ensure swift, secure deliveries.
               Simplify logistics, maximize savings with ShipEx India.
             </div>
-            <div className={styles.social}>
-              <LinkedInIcon className={styles.icon} />
-              <TwitterIcon className={styles.icon} />
-              <FacebookIcon className={styles.icon} />
-              <InstagramIcon className={styles.icon} />
+            <div className="social">
+              <LinkedInIcon className="icon" />
+              <TwitterIcon className="icon" />
+              <FacebookIcon className="icon" />
+              <InstagramIcon className="icon" />
             </div>
-          </div>
-          <div className={styles.second}>
-            <div className={styles.heading}>Company</div>
-            <div className={styles.links}>
-              <Link href="/aboutus" className={styles.link}>
+          </First>
+          <Second>
+            <div className="heading">Company</div>
+            <div className="links">
+              <Link href="/aboutus" className="link">
                 About Us
               </Link>
-              <Link href="/contactus" className={styles.link}>
+              <Link href="/contactus" className="link">
                 Contact Us
               </Link>
-              <Link href="/careers" className={styles.link}>
+              <Link href="/careers" className="link">
                 Careers
               </Link>
-              <Link href="/blog" className={styles.link}>
+              <Link href="/blog" className="link">
                 Blog
               </Link>
-              <Link href="/faq" className={styles.link}>
+              <Link href="/faq" className="link">
                 FAQs
               </Link>
-              <Link href="/terms" className={styles.link}>
+              <Link href="/terms" className="link">
                 Terms & Conditions
               </Link>
             </div>
-          </div>
-
-          <div className={styles.third}>
-            <div className={styles.heading}>Services</div>
-            <div className={styles.links}>
-              <Link href="/services" className={styles.link}>
+          </Second>
+          <Third>
+            <div className="heading">Services</div>
+            <div className="links">
+              <Link href="/services" className="link">
                 Direct-to-Consumer (D2C)
               </Link>
-              <Link href="/services" className={styles.link}>
+              <Link href="/services" className="link">
                 Marketplace Sellers
               </Link>
-              <Link href="/services" className={styles.link}>
+              <Link href="/services" className="link">
                 Social Sellers
               </Link>
-              <Link href="/services" className={styles.link}>
+              <Link href="/services" className="link">
                 Small & Medium Enterprises (SMEs)
               </Link>
-              <Link href="/services" className={styles.link}>
+              <Link href="/services" className="link">
                 Service Providers
               </Link>
-              <Link href="/services" className={styles.link}>
+              <Link href="/services" className="link">
                 Manufacturers
               </Link>
             </div>
-          </div>
-          <div className={styles.fourth}>
-            <div className={styles.heading}>Contact Us</div>
-            <div className={styles.links}>
-              <div className={styles.link}>+91 9999999999</div>
-              <div className={styles.link}>Info@shipexindia.com</div>
-              <div className={styles.link}>
+          </Third>
+          <Fourth>
+            <div className="heading">Contact Us</div>
+            <div className="links">
+              <div className="link">+91 9999999999</div>
+              <div className="link">Info@shipexindia.com</div>
+              <div className="link">
                 2nd Floor, 1/2, 1st Cross, 1st Main, 1st Stage, Indiranagar,
                 Bengaluru, Karnataka 560038
               </div>
-              <div className={styles.link}>
-                <Link href="/privacypolicy" className={styles.linkss}>
+              <div className="link">
+                <Link href="/privacypolicy" className="linkss">
                   Privacy Policy
-                </Link> {"  "}
-                | {"  "}
-                <Link href="/refundpolicy" className={styles.linkss}>
+                </Link>{" "}
+                |{" "}
+                <Link href="/refundpolicy" className="linkss">
                   Refund & Cancellation Policy
                 </Link>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
+          </Fourth>
+        </Container>
+      </FooterContainer>
     </div>
   );
 }

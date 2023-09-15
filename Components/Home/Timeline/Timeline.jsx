@@ -28,8 +28,8 @@ const TimelineContainer = styled.div`
     background-position: center;
     margin: 0 auto;
 
-    @media screen and (max-width: 768px) {
-      width: 100%;
+    @media screen and (max-width: 1024px) {
+      min-height: 100vh;
     }
 
     .containers {
