@@ -5,8 +5,6 @@ import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 
 const GlanceRightContainer = styled.div`
-  display: grid;
-  place-items: center;
   .right {
     width: 100%;
     height: 90vh;
@@ -21,8 +19,8 @@ const GlanceRightContainer = styled.div`
     align-items: flex-start;
     gap: 3rem;
 
-    @media screen and (max-width: 768px) {
-      min-height: 30vh;
+    @media screen and (max-width: 1024px) {
+      min-height: 10vh;
       height: 100%;
     }
 
@@ -67,6 +65,14 @@ const GlanceRightContainer = styled.div`
         font-family: var(--font);
         text-align: left;
         gap: 1rem;
+
+        @media screen and (max-width: 1024px) {
+          height: 20vh;
+        }
+
+        @media screen and (max-width: 768px) {
+          height: 40vh;
+        }
 
         &::-webkit-scrollbar {
           width: 0rem;

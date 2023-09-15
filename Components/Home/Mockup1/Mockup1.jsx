@@ -7,15 +7,13 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 5rem 0;
+  padding: 5rem 3rem;
   height: 100%;
   width: 100%;
   padding-bottom: 0;
 `;
 
 const Heading = styled.div`
-
-  
   display: flex;
   flex-direction: column;
   align-items: center;

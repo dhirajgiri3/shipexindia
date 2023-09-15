@@ -21,6 +21,11 @@ const GlanceLeftContainer = styled.div`
     border-radius: 40px;
     place-items: center;
 
+    @media screen and (max-width: 1024px) {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+    }
+
     @media screen and (max-width: 768px) {
       grid-template-columns: 1fr;
       grid-template-rows: 1fr 1fr 1fr 1fr;
@@ -45,6 +50,11 @@ const GlanceLeftContainer = styled.div`
       transition: transform 0.5s ease-in-out;
       transform: scale(1);
       perspective: 1000;
+
+      @media screen and (max-width: 1024px) {
+        min-height: 10vh;
+        height: 100%;
+      }
 
       &::-webkit-scrollbar {
         width: 0;
@@ -110,20 +120,7 @@ const upVariants = {
     },
   },
 };
-const delayVariants = {
-  hidden: { opacity: 0, y: 50 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 1,
-      ease: "easeInOut",
-      stiffness: 100,
-      damping: 15,
-      delay: 0.3,
-    },
-  },
-};
+
 
 function Left() {
   return (
@@ -144,7 +141,7 @@ function Left() {
           </p>
         </motion.div>
         <motion.div
-          variants={delayVariants}
+          variants={upVariants}
           initial="hidden"
           whileInView="visible"
           className="second comp"
@@ -173,7 +170,7 @@ function Left() {
           </p>
         </motion.div>
         <motion.div
-          variants={delayVariants}
+          variants={upVariants}
           initial="hidden"
           whileInView="visible"
           className="fourth comp"

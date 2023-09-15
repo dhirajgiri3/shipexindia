@@ -135,6 +135,48 @@ const MenuLink = styled.div`
   }
 `;
 
+const LoginLinkMobile = styled(Link)`
+  background: var(--primary-color);
+  font-size: 0.8rem;
+  color: var(--white-bg);
+  padding: 0.7rem 1.5rem;
+  border-radius: 100px;
+  text-decoration: none;
+  transition: background 0.3s ease-in-out;
+  font-family: var(--font);
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+
+  @media screen and (max-width: 1024px) {
+    display: none;
+  }
+
+  @media screen and (max-width: 768px) {
+    font-size: 1rem;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background: var(--secondary-color);
+    border-radius: 100px;
+    transition: width 0.3s ease-in-out;
+    z-index: -1;
+    transform-origin: right;
+  }
+
+  &:hover {
+    &::before {
+      width: 100%;
+    }
+  }
+`;
+
 const LoginLink = styled(Link)`
   background: var(--primary-color);
   font-size: 0.8rem;
@@ -456,9 +498,9 @@ export default function Header() {
             </MenuItem>
           </MenuList>
         </Menu>
-        <LoginLink className="pc" href="/login">
+        <LoginLinkMobile className="pc" href="/login">
           Login/signUp
-        </LoginLink>
+        </LoginLinkMobile>
         <Bar onClick={sidebarToggle}>
           <H1>Menu</H1>
         </Bar>

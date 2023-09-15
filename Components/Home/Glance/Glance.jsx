@@ -19,7 +19,7 @@ const GlanceContainer = styled.div`
     justify-content: center;
     align-items: center;
     padding: 0 5rem;
-    min-height: 100vh;
+    min-height: 50vh;
     height: 100%;
     gap: 2rem;
   }
