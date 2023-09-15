@@ -4,12 +4,7 @@
   width: 100%;
   min-height: 50vh;
   height: 100%;
-  background-color: var(--primary-color);
-  background: linear-gradient(
-    70deg,
-    var(--secondary-color-bg),
-    var(--secondary-color)
-  );
+  background: var(--text-color);
   color: var(--white);
   font-family: var(--font);
   padding: 3rem 5rem;
@@ -57,9 +52,16 @@
     height: 100%;
     width: 100%;
     .logoimg {
-      width: 10rem;
-      height: 5rem;
+      width: 8rem;
+      height: 8rem;
       object-fit: cover;
+      padding: 1rem;
+      background: var(--white);
+      border-radius: 100px;
+      -webkit-border-radius: 100px;
+      -moz-border-radius: 100px;
+      -ms-border-radius: 100px;
+      -o-border-radius: 100px;
     }
   }
 
@@ -144,7 +146,7 @@
     }
 
     .link:hover {
-      color: var(--white);
+      color: var(--white-bg);
       text-decoration: underline;
     }
   }
@@ -194,7 +196,7 @@
     }
 
     .link:hover {
-      color: var(--white);
+      color: var(--white-bg);
       text-decoration: underline;
     }
   }
@@ -250,7 +252,7 @@
       }
 
       .linkss:hover {
-        color: var(--white);
+        color: var(--white-bg);
       }
     }
   }
