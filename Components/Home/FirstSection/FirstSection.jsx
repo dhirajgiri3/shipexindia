@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import Avatar from "@/Components/Avatar/Avatar";
 import styled from "styled-components";
 import Header from "@/Components/Common/Header/Header";
+import Link from "next/link";
 
 // Define styled-components for your elements
 const FirstSectionContainer = styled(motion.main)`
@@ -13,6 +14,10 @@ const FirstSectionContainer = styled(motion.main)`
   height: 100%;
   position: relative;
   z-index: 0;
+
+  a {
+    text-decoration: none;
+  }
 `;
 
 const BackgroundImage = styled.img`
@@ -388,6 +393,11 @@ function FirstSection() {
               >
                 <Avatar />
               </AvatarContainer>
+
+              <Link href="/">
+                {" "}
+                <Button> Get Started</Button>
+              </Link>
             </LeftContainer>
             <RightContainer
               variants={upvariants}
