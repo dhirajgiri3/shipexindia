@@ -48,7 +48,7 @@ const HomeServiceContainer = styled.div`
   min-height: 100vh;
   height: 100%;
   margin: 0 auto;
-  margin-top: 10rem;
+  margin-top: 5rem;
 
   @media screen and (max-width: 768px) {
     margin-top: 5rem;
@@ -57,10 +57,11 @@ const HomeServiceContainer = styled.div`
   .title {
     width: 70%;
     text-align: center;
-    font-family: var(--mid-font);
+    font-family: var(--extra);
     color: var(--white);
-    font-size: var(--heading);
-    font-weight: 300;
+    color: var(--text-color);
+    font-size: var(--heading-small);
+    font-weight: 900;
     margin: 0 auto;
     margin-bottom: 5rem;
 
@@ -111,7 +112,7 @@ function Services() {
   };
 
   const cardVariants = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { opacity: 0, y: 50 },
     visible: {
       opacity: 1,
       y: 0,
@@ -125,10 +126,15 @@ function Services() {
   return (
     <div>
       <HomeServiceContainer>
-        <h1 className="title">
+        <motion.h1
+          variants={cardVariants}
+          initial="hidden"
+          whileInView="visible"
+          className="title"
+        >
           Enterprise to Social sellers, We provide the best rates and services
           for logistics solutions to businesses of all sizes.
-        </h1>
+        </motion.h1>
         <motion.div
           className="container"
           variants={containerVariants}

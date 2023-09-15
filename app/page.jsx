@@ -35,7 +35,7 @@ function Page() {
 
   const [activeSection, setActiveSection] = useState(0);
 
-  const colors = ["#5065f9", "#00c27c", "#eee", "#101010", "#745fde"];
+  const colors = ["#5065f9", "#00c27c", "#fff", "#fff", "#745fde"];
 
   useEffect(() => {
     const handleScroll = () => {

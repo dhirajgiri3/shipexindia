@@ -4,13 +4,13 @@ import styled from "styled-components";
 
 const ServiceCardContainer = styled.div`
   .article-wrapper {
-    width: 20rem;
-    height: 25rem;
+    width: 23rem;
+    height: 27rem;
     overflow-x: hidden;
     overflow-y: scroll;
     transition: 0.3s all ease-in-out;
     border-radius: 30px;
-    padding: 2rem;
+    padding: 1.5rem;
     cursor: pointer;
     background-color: var(--white);
     display: flex;
@@ -18,6 +18,8 @@ const ServiceCardContainer = styled.div`
     align-items: flex-start;
     justify-content: flex-start;
     gap: 1rem;
+    border: 5px solid transparent;
+    transition: all 0.5 ease-in-out;
 
     &::-webkit-scrollbar {
       width: 0rem;
@@ -25,7 +27,6 @@ const ServiceCardContainer = styled.div`
 
     .icons {
       width: 100%;
-      height: 100%;
 
       img {
         height: 5rem;
@@ -36,7 +37,6 @@ const ServiceCardContainer = styled.div`
 
     .heading {
       width: 100%;
-      height: 100%;
       h1 {
         font-size: var(--heading-small);
         font-family: var(--extra);
@@ -48,7 +48,6 @@ const ServiceCardContainer = styled.div`
 
   .paragraph {
     width: 100%;
-    height: 100%;
 
     p {
       font-size: var(--para);
@@ -59,8 +58,9 @@ const ServiceCardContainer = styled.div`
   }
 
   .article-wrapper:hover {
-    box-shadow: 10px 10px 0 #eee, 20px 20px 0 #ddd;
+    box-shadow: 10px 10px 0 #111, 20px 20px 0 #151515;
     transform: translate(-20px, -20px);
+    border: 5px solid #111;
   }
 
   .article-wrapper:active {

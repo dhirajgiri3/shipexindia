@@ -10,13 +10,17 @@ const Container = styled.div`
   padding: 5rem 0;
   height: 100%;
   width: 100%;
+  padding-bottom: 0;
 `;
 
 const Heading = styled.div`
+
+  
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1rem;
+
   h1 {
     text-align: center;
     font-family: var(--bold);

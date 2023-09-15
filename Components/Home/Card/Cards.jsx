@@ -11,7 +11,7 @@ const CardContainer = styled.div`
   gap: 3rem;
   padding: 0 10rem;
   font-family: var(--font);
-  margin: 5rem 0;
+  margin-bottom: 5rem;
 
   @media screen and (max-width: 1000px) {
     padding: 0 5rem;
