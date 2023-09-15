@@ -19,6 +19,7 @@ const CardContainer = styled.div`
     grid-template-rows: repeat(2, 1fr);
     gap: 2rem;
     margin: 3rem 0;
+
   }
   @media screen and (max-width: 768px) {
     padding: 0 1rem;
@@ -173,7 +174,7 @@ const Heading = styled.div`
 
   @media screen and (max-width: 768px) {
     padding: 0 1rem;
-    margin-top: 0;
+    margin-top: 5rem;
   }
 
   h1 {
