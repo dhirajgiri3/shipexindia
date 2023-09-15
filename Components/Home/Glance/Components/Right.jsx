@@ -22,7 +22,7 @@ const GlanceRightContainer = styled.div`
     gap: 3rem;
 
     @media screen and (max-width: 768px) {
-      min-height: 50vh;
+      min-height: 30vh;
       height: 100%;
     }
 

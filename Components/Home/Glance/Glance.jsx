@@ -13,13 +13,18 @@ const GlanceContainer = styled.div`
   margin: 5rem 0;
   padding: 0 10rem;
   color: #eee;
+  background: #000;
+  margin-bottom: 0;
 
   @media screen and (max-width: 1000px) {
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     padding: 0 5rem;
     min-height: 100vh;
     height: 100%;
+    gap: 2rem;
   }
 
   @media screen and (max-width: 768px) {

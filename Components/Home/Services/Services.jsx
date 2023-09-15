@@ -68,6 +68,7 @@ const HomeServiceContainer = styled.div`
       width: 95%;
       font-size: var(--heading-small);
       margin-bottom: 2rem;
+      text-align: left;
     }
   }
 
