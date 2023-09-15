@@ -79,7 +79,7 @@
   overflow: hidden;
   background: #fff;
 
-  @media screen and (max-width: 1000px) {
+  @media screen and (max-width: 1024px) {
     height: 30vh;
   }
 }
@@ -101,7 +101,7 @@
   animation: CompanyLogo_scrollX__ZidZm 40s linear infinite;
   -webkit-animation: CompanyLogo_scrollX__ZidZm 40s linear infinite;
 
-  @media screen and (max-width: 1000px) {
+  @media screen and (max-width: 1024px) {
     padding: 0 5rem;
     height: 30vh;
   }

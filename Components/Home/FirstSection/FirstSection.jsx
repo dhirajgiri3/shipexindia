@@ -39,7 +39,7 @@ const ContentContainer = styled.div`
   padding-top: 10vh;
   gap: 1rem;
 
-  @media screen and (max-width: 1000px) {
+  @media screen and (max-width: 1024px) {
     padding: 2rem 5rem;
     padding-top: 15vh;
   }
@@ -57,7 +57,7 @@ const TopContainer = styled.div`
   width: 100%;
   gap: 0;
 
-  @media screen and (max-width: 1000px) {
+  @media screen and (max-width: 1024px) {
     flex-direction: column;
   }
 
@@ -84,7 +84,7 @@ const Heading1 = styled(motion.h1)`
   font-weight: 100;
   width: 70%;
 
-  @media screen and (max-width: 1000px) {
+  @media screen and (max-width: 1024px) {
     font-size: 3rem;
     width: 100%;
   }
@@ -99,7 +99,7 @@ const Paragraph = styled(motion.p)`
   color: var(--text-grey);
   letter-spacing: 0.5px;
 
-  @media screen and (max-width: 1000px) {
+  @media screen and (max-width: 1024px) {
     width: 100%;
   }
 `;
@@ -120,7 +120,7 @@ const FirstSectionImage = styled.img`
   height: 90vh;
   object-fit: cover;
 
-  @media screen and (max-width: 1000px) {
+  @media screen and (max-width: 1024px) {
     height: 40vh;
   }
 
@@ -147,7 +147,7 @@ const BottomContainer = styled(motion.div)`
   -ms-border-radius: 50px;
   -o-border-radius: 50px;
 
-  @media screen and (max-width: 1000px) {
+  @media screen and (max-width: 1024px) {
     padding: 2rem 0;
     border-radius: 20px;
     -webkit-border-radius: 20px;

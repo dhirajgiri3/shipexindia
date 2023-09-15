@@ -83,7 +83,7 @@ const HomeServiceContainer = styled.div`
     gap: 3rem;
     place-items: center;
 
-    @media screen and (max-width: 1000px) {
+    @media screen and (max-width: 1024px) {
       padding: 0 5rem;
       grid-template-columns: repeat(2, 1fr);
       grid-template-rows: repeat(3, 1fr);

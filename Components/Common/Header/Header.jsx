@@ -26,7 +26,7 @@ const Navbar = styled.nav`
   z-index: 1000;
   border-radius: 100px;
 
-  @media screen and (max-width: 1000px) {
+  @media screen and (max-width: 1024px) {
     height: 6vh;
   }
 
@@ -44,7 +44,7 @@ const Navbar = styled.nav`
 `;
 
 const Menu = styled.div`
-  @media screen and (max-width: 1000px) {
+  @media screen and (max-width: 1024px) {
     display: none;
   }
 `;
@@ -163,6 +163,7 @@ const LoginLink = styled(Link)`
     border-radius: 100px;
     transition: width 0.3s ease-in-out;
     z-index: -1;
+    transform-origin: right;
   }
 
   &:hover {
@@ -173,7 +174,7 @@ const LoginLink = styled(Link)`
 `;
 
 const CtaButton = styled(Link)`
-  @media screen and (max-width: 1000px) {
+  @media screen and (max-width: 1024px) {
     margin-right: 5rem;
   }
 
@@ -207,7 +208,7 @@ const Bar = styled.div`
   z-index: 1000;
   right: 1rem;
 
-  @media screen and (max-width: 1000px) {
+  @media screen and (max-width: 1024px) {
     display: block;
 
     h1 {
@@ -231,7 +232,7 @@ const SidebarBg = styled.div`
   z-index: 999;
   transition: all 0.5s ease-in-out;
 
-  @media screen and (max-width: 1000px) {
+  @media screen and (max-width: 1024px) {
     display: block;
   }
 `;
@@ -252,7 +253,7 @@ const SidebarContainer = styled.div`
   padding-top: 5rem;
   display: none;
 
-  @media screen and (max-width: 1000px) {
+  @media screen and (max-width: 1024px) {
     display: flex;
   }
 `;
@@ -289,7 +290,7 @@ const SidebarContent = styled.div`
       flex-direction: column;
       gap: 2rem;
 
-      @media screen and (max-width: 1000px) {
+      @media screen and (max-width: 1024px) {
         gap: 3rem;
       }
 

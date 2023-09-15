@@ -13,7 +13,7 @@ const CardContainer = styled.div`
   font-family: var(--font);
   margin-bottom: 5rem;
 
-  @media screen and (max-width: 1000px) {
+  @media screen and (max-width: 1024px) {
     padding: 0 5rem;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
@@ -77,7 +77,7 @@ const CardLayout = styled.div`
     box-shadow: 10px 10px var(--white);
     border: 5px solid var(--white);
 
-    @media screen and (max-width: 1000px) {
+    @media screen and (max-width: 1024px) {
       max-width: 40vw;
     }
 
@@ -145,7 +145,7 @@ const CardLayout = styled.div`
     justify-content: center;
     transform: rotateY(180deg);
 
-    @media screen and (max-width: 1000px) {
+    @media screen and (max-width: 1024px) {
       max-width: 40vw;
     }
 
