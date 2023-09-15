@@ -26,7 +26,7 @@ const CardContainer = styled.div`
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: repeat(4, 1fr);
     gap: 2rem;
-    margin: 1rem 0;
+    margin:0;
   }
 `;
 
@@ -174,7 +174,6 @@ const Heading = styled.div`
 
   @media screen and (max-width: 768px) {
     padding: 0 1rem;
-    margin-top: 5rem;
   }
 
   h1 {

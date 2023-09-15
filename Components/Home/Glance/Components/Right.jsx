@@ -6,6 +6,7 @@ import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 
 const GlanceRightContainer = styled.div`
   .right {
+    
     width: 100%;
     height: 90vh;
     background: #5065f920;

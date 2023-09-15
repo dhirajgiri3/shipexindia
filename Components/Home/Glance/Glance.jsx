@@ -12,6 +12,7 @@ const GlanceContainer = styled.div`
   gap: 1rem;
   margin: 5rem 0;
   padding: 0 10rem;
+  margin-bottom: 0;
 
   @media screen and (max-width: 1024px) {
     display: flex;

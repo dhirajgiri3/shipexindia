@@ -7,10 +7,21 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 5rem 3rem;
+  padding: 5rem 10rem;
   height: 100%;
   width: 100%;
   padding-bottom: 0;
+  gap: 1rem;
+
+  @media screen and (max-width: 1024px) {
+    padding: 5rem 5rem;
+    padding-bottom: 0;
+  }
+
+  @media screen and (max-width: 768px) {
+    padding: 5rem 1rem;
+    padding-bottom: 0;
+  }
 `;
 
 const Heading = styled.div`
@@ -54,7 +65,7 @@ const Heading = styled.div`
 `;
 
 const Images = styled(Image)`
-  width: 90vw;
+  width: 100%;
   height: auto;
   object-fit: cover;
 `;
@@ -78,8 +89,8 @@ const variants = {
 
 const Mockup1 = () => {
   return (
-    <Container>
-      <AnimatePresence>
+    <AnimatePresence>
+      <Container>
         <motion.div>
           <Heading>
             <motion.h1
@@ -105,8 +116,8 @@ const Mockup1 = () => {
         <motion.div variants={variants} initial="hidden" whileInView="visible">
           <Images src={img1} alt="Centered Image" />
         </motion.div>
-      </AnimatePresence>
-    </Container>
+      </Container>{" "}
+    </AnimatePresence>
   );
 };
 
