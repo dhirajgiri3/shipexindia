@@ -9,7 +9,6 @@ import img4 from "@/Assets/Images/services/Icons/4.png";
 import img5 from "@/Assets/Images/services/Icons/5.png";
 import img6 from "@/Assets/Images/services/Icons/6.png";
 
-// Define an array of card data
 const cardData = [
   {
     imgurl: img1,
@@ -48,7 +47,7 @@ const HomeServiceContainer = styled.div`
   min-height: 100vh;
   height: 100%;
   margin: 0 auto;
-  margin-top: 5rem;
+  margin: 5rem 0;
 
   @media screen and (max-width: 768px) {
     margin-top: 5rem;

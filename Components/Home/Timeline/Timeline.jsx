@@ -190,7 +190,6 @@ const leftvariants = {
     transition: {
       duration: 1,
       ease: "easeInOut",
-      delay: 1,
     },
   },
 };
@@ -204,7 +203,6 @@ const rightvariants = {
     transition: {
       duration: 1,
       ease: "easeInOut",
-      delay: 1,
     },
   },
 };
