@@ -175,10 +175,9 @@ function Right() {
     if (!isAnimating) {
       setIsAnimating(true);
       setActiveSlide((prevSlide) => (prevSlide + 1) % slides.length);
-
       setTimeout(() => {
         setIsAnimating(false);
-      }, 1000); // Adjust the duration based on your transition settings
+      }, 1000);
     }
   };
 
@@ -188,10 +187,9 @@ function Right() {
       setActiveSlide((prevSlide) =>
         prevSlide === 0 ? slides.length - 1 : prevSlide - 1
       );
-
       setTimeout(() => {
         setIsAnimating(false);
-      }, 1000); // Adjust the duration based on your transition settings
+      }, 1000);
     }
   };
 
@@ -226,7 +224,7 @@ function Right() {
               <AnimatePresence
                 exitBeforeEnter={false}
                 initial={false}
-                mode="wait"
+                custom={activeSlide}
               >
                 <motion.div
                   key={activeSlide}
