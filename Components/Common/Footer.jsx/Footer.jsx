@@ -10,7 +10,6 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import Link from "next/link";
 import styled from "styled-components";
 
-// Styled components for the Footer
 const FooterContainer = styled.div`
   width: 100%;
   min-height: 50vh;

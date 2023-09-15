@@ -11,6 +11,7 @@ import Timeline from "@/Components/Home/Timeline/Timeline";
 import Services from "@/Components/Home/Services/Services";
 import Glance from "@/Components/Home/Glance/Glance";
 import { gsap } from "gsap";
+import Footer from "@/Components/Common/Footer.jsx/Footer";
 
 const HomeContainer = styled.div`
   width: 100%;
@@ -52,7 +53,7 @@ function Page() {
           // Use GSAP for smooth background color transition
           gsap.to(mainRef.current, {
             backgroundColor: colors[i],
-            duration: .3,
+            duration: 0.3,
             ease: "power2.inOut",
             yoyo: true,
           });
@@ -69,28 +70,35 @@ function Page() {
   }, [activeSection]);
 
   return (
-    <HomeContainer>
-      <main ref={mainRef}>
-        <FirstSection />
-        <CompanyLogo />
-        {containerRefs.map((ref, index) => (
-          <SectionContainer
-            ref={ref}
-            key={index}
-            style={{
-              backgroundColor:
-                activeSection === index ? colors[index] : "transparent",
-            }}
-          >
-            {
-              [<Mockup1 />, <Cards />, <Services />, <Timeline />, <Glance />][
-                index
-              ]
-            }
-          </SectionContainer>
-        ))}
-      </main>
-    </HomeContainer>
+    <>
+      <HomeContainer>
+        <main ref={mainRef}>
+          <FirstSection />
+          <CompanyLogo />
+          {containerRefs.map((ref, index) => (
+            <SectionContainer
+              ref={ref}
+              key={index}
+              style={{
+                backgroundColor:
+                  activeSection === index ? colors[index] : "transparent",
+              }}
+            >
+              {
+                [
+                  <Mockup1 />,
+                  <Cards />,
+                  <Services />,
+                  <Timeline />,
+                  <Glance />,
+                ][index]
+              }
+            </SectionContainer>
+          ))}
+        </main>
+      </HomeContainer>
+      <Footer />
+    </>
   );
 }
 
