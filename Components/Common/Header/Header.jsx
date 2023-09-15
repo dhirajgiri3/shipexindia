@@ -144,13 +144,31 @@ const LoginLink = styled(Link)`
   text-decoration: none;
   transition: background 0.3s ease-in-out;
   font-family: var(--font);
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
 
   @media screen and (max-width: 768px) {
     font-size: 1rem;
   }
 
-  &:hover {
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
     background: var(--secondary-color);
+    border-radius: 100px;
+    transition: width 0.3s ease-in-out;
+    z-index: -1;
+  }
+
+  &:hover {
+    &::before {
+      width: 100%;
+    }
   }
 `;
 
