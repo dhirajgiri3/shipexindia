@@ -1,5 +1,10 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
+import img1 from "@/Assets/Images/Blog/1.png";
+import img2 from "@/Assets/Images/Blog/2.png";
+import img3 from "@/Assets/Images/Blog/3.png";
+import Image from "next/image";
+import Link from "next/link";
 
 const BlogContainer = styled.div`
   display: flex;
@@ -7,6 +12,14 @@ const BlogContainer = styled.div`
   align-items: center;
   justify-content: center;
   padding: 5rem 10rem;
+
+  .heading {
+    font-family: var(--extra);
+    font-size: var(--heading);
+    color: var(--text-color);
+    letter-spacing: -1px;
+    font-weight: 700;
+  }
 `;
 
 const BlogWrapper = styled(motion.div)`
@@ -34,7 +47,7 @@ const BlogCard = styled(motion.div)`
   padding: 2rem;
   text-align: left;
   cursor: pointer;
-  transition: all 0.2s ease-in-out;
+  transition: all 0.5s ease-in-out;
   color: var(--white-bg);
   gap: 1rem;
   font-family: var(--font);
@@ -44,7 +57,7 @@ const BlogCard = styled(motion.div)`
   }
 `;
 
-const BlogImage = styled.img`
+const BlogImage = styled(Image)`
   width: 100%;
   height: 200px;
   object-fit: cover;
@@ -74,7 +87,7 @@ const BlogDescription = styled.p`
   line-height: 1.8;
 `;
 
-const BlogCTA = styled.a`
+const BlogCTA = styled(Link)`
   font-family: var(--font);
   font-size: 0.8rem;
   color: var(--white);
@@ -107,7 +120,7 @@ const Blog = () => {
   const blogs = [
     {
       id: 1,
-      image: "https://picsum.photos/400/300",
+      image: img1,
       title: "On-Time Delivery: The Vital Metric For...",
       description:
         "Introduction In the fast-paced world of eCommerce, on-time delivery plays a crucial role in customer",
@@ -116,7 +129,7 @@ const Blog = () => {
     },
     {
       id: 2,
-      image: "https://picsum.photos/400/300",
+      image: img2,
       title: " Accelerating Growth",
       description:
         "In the contemporary, hyper-competitive business environment, swift and efficient shipping serves as a linchpin for the triumph and enlargement of any enterprise. With the ascendancy of e-commerce and ever-increasing customer expectations, expedited shipping has assumed a pivotal role in fortifying customer satisfaction, ",
@@ -125,7 +138,7 @@ const Blog = () => {
     },
     {
       id: 3,
-      image: "https://picsum.photos/400/300",
+      image: img3,
       title: "Decoding RTO (Return to Origin) ",
       description:
         "In the realm of online business, the return of products, known as Return to Origin (RTO), has become a prevalent challenge. When a product fails to reach its intended destination and finds its way back to the online store, it triggers a series of complications that can affect revenue and profitability.",
@@ -136,7 +149,7 @@ const Blog = () => {
 
   return (
     <BlogContainer>
-      <h2>For You</h2>
+      <h2 className="heading">Some Sugestion For You</h2>
       <BlogWrapper
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -150,6 +163,7 @@ const Blog = () => {
             <BlogCTA href={blog.link}>{blog.cta}</BlogCTA>
           </BlogCard>
         ))}
+
       </BlogWrapper>
     </BlogContainer>
   );
