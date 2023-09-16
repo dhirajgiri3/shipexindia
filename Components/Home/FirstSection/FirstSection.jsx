@@ -4,10 +4,8 @@ import React from "react";
 import { motion } from "framer-motion";
 import Avatar from "@/Components/Avatar/Avatar";
 import styled from "styled-components";
-import Header from "@/Components/Common/Header/Header";
 import Link from "next/link";
 
-// Define styled-components for your elements
 const FirstSectionContainer = styled(motion.main)`
   width: 100%;
   min-height: 100vh;
