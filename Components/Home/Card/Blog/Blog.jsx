@@ -16,10 +16,22 @@ const BlogContainer = styled.div`
   .heading {
     font-family: var(--extra);
     font-size: var(--heading);
-    color: var(--text-color);
+    color: var(--text-grey);
     letter-spacing: -1px;
     font-weight: 700;
+    text-align: center;
+
+    @media screen and (max-width: 768px) {
+        font-size: var(--heading-small);
+        }
   }
+
+    @media screen and (max-width: 1024px) {
+        padding: 5rem;}
+
+    @media screen and (max-width: 768px) {
+        padding: 5rem 1rem;
+    }
 `;
 
 const BlogWrapper = styled(motion.div)`
@@ -41,9 +53,9 @@ const BlogCard = styled(motion.div)`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: center;
-  background-color: #191919;
-  border-radius: 40px;
+  justify-content: flex-start;
+  background-color: #181818;
+  border-radius: 30px;
   padding: 2rem;
   text-align: left;
   cursor: pointer;
@@ -61,7 +73,7 @@ const BlogImage = styled(Image)`
   width: 100%;
   height: 200px;
   object-fit: cover;
-  border-radius: 20px;
+  border-radius: 15px;
 `;
 
 const BlogTitle = styled.h3`
