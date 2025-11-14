@@ -212,10 +212,11 @@ const Label = styled.label`
   top: 10px;
   left: 20px;
   transition: all 0.5s;
-  z-index: -1;
+  z-index: 1;
   font-size: 0.8rem;
   font-family: var(--font);
   color: var(--text-grey);
+  pointer-events: none;
 
   ${Input}:focus ~ & {
     top: -10px;
@@ -418,8 +419,8 @@ function FirstSection() {
             <Heading3>Track Your Shipment</Heading3>
             <InputSection>
               <InputContainer>
-                <Input name="text" type="text" />
-                <Label htmlFor="input">Enter AWB/OrderId</Label>
+                <Input id="tracking-input" name="text" type="text" />
+                <Label htmlFor="tracking-input">Enter AWB/OrderId</Label>
                 <TopLine></TopLine>
                 <Underline></Underline>
               </InputContainer>

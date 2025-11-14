@@ -450,7 +450,9 @@ export default function Header() {
         <Menu>
           <MenuList>
             <MenuItem>
-              <MenuLink href="/">Home</MenuLink>
+              <Link href="/">
+                <MenuLink>Home</MenuLink>
+              </Link>
             </MenuItem>
             <MenuItem>
               <MenuLink onClick={toggleDropdown}>
@@ -483,13 +485,19 @@ export default function Header() {
               </MenuLink>
             </MenuItem>
             <MenuItem>
-              <MenuLink href="/services">Service</MenuLink>
+              <Link href="/services">
+                <MenuLink>Service</MenuLink>
+              </Link>
             </MenuItem>
             <MenuItem>
-              <MenuLink href="/about">About Us</MenuLink>
+              <Link href="/about">
+                <MenuLink>About Us</MenuLink>
+              </Link>
             </MenuItem>
             <MenuItem>
-              <MenuLink href="/contact">Contact</MenuLink>
+              <Link href="/contact">
+                <MenuLink>Contact</MenuLink>
+              </Link>
             </MenuItem>
             <MenuItem>
               <CtaButton href="/">
@@ -519,7 +527,9 @@ export default function Header() {
           <div className="menu">
             <ul className="ul">
               <MenuItem>
-                <MenuLink href="/">Home</MenuLink>
+                <Link href="/">
+                  <MenuLink>Home</MenuLink>
+                </Link>
               </MenuItem>
               <MenuItem>
                 <MenuLink onClick={toggleDropdown}>
@@ -552,18 +562,24 @@ export default function Header() {
                 </MenuLink>
               </MenuItem>
               <MenuItem>
-                <MenuLink href="/services">Service</MenuLink>
+                <Link href="/services">
+                  <MenuLink>Service</MenuLink>
+                </Link>
               </MenuItem>
               <MenuItem>
-                <MenuLink href="/about">About Us</MenuLink>
+                <Link href="/about">
+                  <MenuLink>About Us</MenuLink>
+                </Link>
               </MenuItem>
               <MenuItem>
-                <MenuLink href="/contact">Contact</MenuLink>
+                <Link href="/contact">
+                  <MenuLink>Contact</MenuLink>
+                </Link>
               </MenuItem>
               <MenuItem>
-                <div className="ctaButton">
+                <Link href="/" className="ctaButton">
                   <CtaButtonWrapper>Book Shipment</CtaButtonWrapper>
-                </div>
+                </Link>
               </MenuItem>
             </ul>
           </div>
